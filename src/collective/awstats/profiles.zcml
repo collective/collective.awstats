@@ -4,14 +4,10 @@
     i18n_domain="awstats">
 
   <genericsetup:registerProfile
-      name="default"
-      title="awstats"
-      directory="profiles/default"
-      description="Extension profile for awstats."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-  
-  <!-- ##code-section profiles.zcml #fill in your manual code here -->
-  <!-- ##/code-section profiles.zcml -->
+    name="default"
+    title="awstats"
+    directory="profiles/default"
+    description="Extension profile for awstats."
+    provides="Products.GenericSetup.interfaces.EXTENSION" />
 
 </configure>

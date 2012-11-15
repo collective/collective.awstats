@@ -1,11 +1,7 @@
 <?xml version="1.0"?>
-<!-- ##code-section HEAD -->
-<!-- ##/code-section HEAD -->
 <object name="portal_catalog" meta_type="Plone Catalog Tool">
   <index name="getDomain" 
          meta_type="FieldIndex">
     <indexed_attr value="getDomain"/>
   </index>
 </object>
-<!-- ##code-section FOOT -->
-<!-- ##/code-section FOOT -->

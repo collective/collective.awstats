@@ -1,58 +1,33 @@
-# -*- coding: utf-8 -*-
-#
-# GNU General Public License (GPL)
-#
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License
-# as published by the Free Software Foundation; either version 2
-# of the License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-# 02110-1301, USA.
-#
-
-__author__ = """Robert Niederreiter <rnix@squarewave.at>"""
-__docformat__ = 'plaintext'
-
-from zope.interface import implements 
-
+from zope.interface import implementer
 from interfaces import ICustomPart
 from base import StatsBase
-
 from collective.awstats.constants import *
 
+
+@implementer(ICustomPart)
 class CustomPart(StatsBase):
     """Implementation details see interfaces.ICustomPart
     """
-    
-    implements(ICustomPart)
-    
+
     barnamemapping = {
         'pages': 'hit',
         'bandwidth': 'byte',
         'entry': 'entrance',
         'exit': 'exit',
     }
-    
+
     def __init__(self, context, request):
         super(CustomPart, self).__init__(context, request)
         self.__partdefinitions = False
         self.__custompartbarnames = False
-    
+
     @property
     def columncount(self):
         count = len(self.custompartbarnames) + 1
         if self.context.getGenerateGraph():
             count += 1
         return count
-    
+
     @property
     def parttitle(self):
         my = self.my
@@ -65,7 +40,7 @@ class CustomPart(StatsBase):
             epochtext = '(%s %s)' % (MONTH[month], year)
         title = self.context.Title()
         return '%s %s' % (title, epochtext)
-    
+
     @property
     def customparthead(self):
         defs = self._partdefinitions
@@ -81,7 +56,7 @@ class CustomPart(StatsBase):
                     'style': '%scolor datacolumn' % self.barnamemapping[col[0]],
                 })
         return head
-    
+
     @property
     def custompartdata(self):
         epoch = self.context.getEpoch()
@@ -113,7 +88,7 @@ class CustomPart(StatsBase):
                 pointer += 1
         
         return data
-    
+
     @property
     def custompartbarnames(self):
         if self.__custompartbarnames is not False:
@@ -128,7 +103,7 @@ class CustomPart(StatsBase):
         
         self.__custompartbarnames = barnames
         return self.__custompartbarnames
-    
+
     @property
     def _annualcustompartdata(self):
         my = self.my
@@ -166,7 +141,7 @@ class CustomPart(StatsBase):
         for key in orderedkeys:
             data.append(collectors[key])
         return data
-    
+
     @property
     def _monthlycustompartdata(self):
         my = self.my
@@ -175,7 +150,7 @@ class CustomPart(StatsBase):
             stats = dict()
         rawdata = stats.get('SIDER', dict())
         return self._getCustomPartData(rawdata, self._generateQuery())
-    
+
     def _generateQuery(self):
         defs = self._partdefinitions
         keys = self.barnamemapping.keys()
@@ -185,7 +160,7 @@ class CustomPart(StatsBase):
         for row in defs['rows']:
             query['rows'].append(row)
         return query
-    
+
     def _getCustomPartData(self, rawdata, query):
         rendergraph = self.context.getGenerateGraph()
         data = list()
@@ -202,7 +177,7 @@ class CustomPart(StatsBase):
                     dataset['columns'].append(int(rowdata.get(col, 0)))
             data.append(dataset)
         return data
-    
+
     @property
     def _partdefinitions(self):
         if self.__partdefinitions is not False:
@@ -232,7 +207,7 @@ class CustomPart(StatsBase):
         defs['rows'] = rows
         
         return defs
-    
+
     def _getDefinition(self, definition):
         definition = definition.strip()
         ret = [definition.lower(), definition]

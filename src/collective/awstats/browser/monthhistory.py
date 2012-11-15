@@ -1,39 +1,13 @@
-# -*- coding: utf-8 -*-
-#
-# GNU General Public License (GPL)
-#
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License
-# as published by the Free Software Foundation; either version 2
-# of the License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-# 02110-1301, USA.
-#
-
-__author__ = """Robert Niederreiter <rnix@squarewave.at>"""
-__docformat__ = 'plaintext'
-
-from zope.interface import implements 
-
+from zope.interface import implementer
 from interfaces import IMonthHistory
 from base import StatsBase
-
 from collective.awstats.constants import *
 
+@implementer(IMonthHistory)
 class MonthHistory(StatsBase):
     """Implementation details see interfaces.IMonthHistory
     """
-    
-    implements(IMonthHistory)
-    
+
     @property
     def monthgraph(self):
         data = self._getRawMonthData(self.my[2:])
@@ -45,18 +19,18 @@ class MonthHistory(StatsBase):
         for set in data:
             set['data'] = graph[set['month']]
         return data
-    
+
     @property
     def monthbarnames(self):
         return ['unique', 'visit', 'page', 'hit', 'byte']
-    
+
     @property
     def monthoverview(self):
         data = self._getRawMonthData(self.my[2:])
         for set in data:
             set['data']['byte'] = self.parseBytes(set['data']['byte'])
         return data
-    
+
     @property
     def monthsum(self):
         data = self._getRawMonthData(self.my[2:])
@@ -69,7 +43,7 @@ class MonthHistory(StatsBase):
                 summary[field] += set['data'][field]
         summary['byte'] = self.parseBytes(summary['byte'])
         return summary
-    
+
     def _getRawMonthData(self, year):
         """Return the raw (not formatted) general data for this month.
         """
