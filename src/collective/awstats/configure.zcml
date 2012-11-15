@@ -1,9 +1,33 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:browser="http://namespaces.zope.org/browser"
            xmlns:five="http://namespaces.zope.org/five">
-
+  
   <include file="profiles.zcml" />
-
+    
+  <!-- ##code-section configure.zcml -->
+  
   <include package=".browser" />
+
+  <five:implements class="bda.awstatsparser.parser.ParsedStatistics"
+                   interface=".interfaces.IParsedStatistics"
+  />
+
+  <five:implements class="bda.awstatsparser.parser.ParsedMonth"
+                   interface=".interfaces.IParsedMonth"
+  />
+
+  <five:implements class="bda.awstatsparser.parser.ParsedSection"
+                   interface=".interfaces.IParsedSection"
+  />
+                   
+  <adapter for=".interfaces.IAwstats"
+           factory=".provider.AwstatsProvider"
+  />
+  
+  <adapter for=".interfaces.ICustomPart"
+           factory=".provider.AwstatsProvider"
+  />
+    
+  <!-- ##/code-section configure.zcml -->
 
 </configure>

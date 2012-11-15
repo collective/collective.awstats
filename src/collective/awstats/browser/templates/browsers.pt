@@ -1,0 +1,27 @@
+<div>
+    <table class="browser">
+        <thead>
+            <th colspan="5" class="left">
+                <span>Browser</span>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2"><strong>Browser</strong></td>
+                <td class="hitcolor datacolumn"><strong>Zugriffe</strong></td>
+                <td class="hitcolor datacolumn"><strong>Prozent</strong></td>
+            </tr>
+            <tr tal:repeat="browser view/browsersummary">
+                <td class="left icon">
+                    <img tal:attributes="src browser/icon;
+                                         alt browser/name" />
+                </td>
+                <td class="left"><span tal:content="browser/name" /></td>
+                <td><span tal:content="browser/hit">100</span></td>
+                <td><span tal:content="browser/hitpercent">0 %</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+    </p>
+</div>

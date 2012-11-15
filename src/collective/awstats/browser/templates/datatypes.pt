@@ -1,0 +1,32 @@
+<div>
+    <table class="datatypes">
+        <thead>
+            <th colspan="7" class="left">
+                <span>Dateitypen</span>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="3"></td>
+                <td class="hitcolor datacolumn"><strong>Zugriffe</strong></td>
+                <td class="hitcolor datacolumn"><strong>Prozent</strong></td>
+                <td class="bytecolor datacolumn"><strong>Bytes</strong></td>
+                <td class="bytecolor datacolumn"><strong>Prozent</strong></td>
+            </tr>
+            <tr tal:repeat="datatype view/datatypesummary">
+                <td class="left icon">
+                    <img tal:attributes="src datatype/icon;
+                                         alt datatype/filetype" />
+                </td>
+                <td class="left postfix"><span tal:content="datatype/postfix">gif</span></td>
+                <td class="left filetype"><span tal:content="datatype/filetype">gif</span></td>
+                <td><span tal:content="datatype/hit">100</span></td>
+                <td><span tal:content="datatype/hitpercent">0 %</span></td>
+                <td><span tal:content="datatype/byte">100</span></td>
+                <td><span tal:content="datatype/bytepercent">0 %</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+    </p>
+</div>

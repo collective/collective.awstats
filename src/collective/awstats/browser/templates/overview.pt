@@ -1,0 +1,92 @@
+<div>
+    <table class="overview">
+        <thead>
+            <th colspan="6" class="left">Zusammenfassung</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="right">
+                    <strong>Zeitraum</strong>
+                </td>
+                <td class="left" colspan="5">
+                    <span tal:content="view/epoch" />
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    <strong>Erster Zugriff</strong>
+                </td>
+                <td class="left" colspan="5">
+                    <span tal:content="view/firsttime" />
+                </td>
+            </tr>
+            <tr>
+                <td class="right">
+                    <strong>Letzter Zugriff</strong>
+                </td>
+                <td class="left" colspan="5">
+                    <span tal:content="view/lasttime" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="uniquecolor"><strong>Unterschiedliche Besucher</strong></td>
+                <td class="visitcolor"><strong>Anzahl der Besuche</strong></td>
+                <td class="pagecolor"><strong>Seiten</strong></td>
+                <td class="hitcolor"><strong>Zugriffe</strong></td>
+                <td class="bytecolor"><strong>Bytes</strong></td>
+            </tr>
+            <tr>
+                <td><span>gesehener Traffic*</span></td>
+                <td>
+                    <strong tal:content="view/totalunique">100</strong>
+                </td>
+                <td>
+                    <strong tal:content="view/totalvisits">100</strong>
+                    <br />
+                    <span>
+                        (<span tal:replace="view/totalaverage" />&nbsp;Besuche/Besucher)
+                    </span>
+                </td>
+                <td>
+                    <strong tal:content="view/totalknownpages">100</strong>
+                    <br />
+                    <span>
+                        (<span tal:replace="view/totalpagesaverage" />&nbsp;Seiten/Besucher)
+                    </span>
+                </td>
+                <td>
+                    <strong tal:content="view/totalknownhits">100</strong>
+                    <br />
+                    <span>
+                        (<span tal:replace="view/totalhitsaverage" />&nbsp;Zugriffe/Besucher)
+                    </span>
+                </td>
+                <td>
+                    <strong tal:content="view/totalknownbytes">100</strong>
+                    <br />
+                    <span>
+                        (<span tal:replace="view/totalbytesaverage" />/Besucher)
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td><span>nicht gesehener Traffic*</span></td>
+                <td colspan="2"></td>
+                <td>
+                    <strong tal:content="view/totalunknownpages">100</strong>
+                </td>
+                <td>
+                    <strong tal:content="view/totalunknownhits">100</strong>
+                </td>
+                <td>
+                    <strong tal:content="view/totalunknownbytes">100</strong>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        * Nicht gesehener Traffic ist Traffic welcher von Robots,
+          Würmern oder Antworten mit speziellem HTTP-Statuscode
+    </p>
+</div>

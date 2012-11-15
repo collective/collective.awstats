@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<object name="portal_skins"
+        meta_type="Plone Skins Tool"
+        allow_any="False"
+        cookie_persistence="False"
+        default_skin="Plone Default"
+        request_varname="plone_skin">
+
+ <object name="blueawstats_images"
+         meta_type="Filesystem Directory View"
+         directory="BlueAwstats/skins/blueawstats_images"/>
+ <object name="blueawstats_templates"
+         meta_type="Filesystem Directory View"
+         directory="BlueAwstats/skins/blueawstats_templates"/>
+ <object name="blueawstats_styles"
+         meta_type="Filesystem Directory View"
+         directory="BlueAwstats/skins/blueawstats_styles"/>
+ 
+ <skin-path name="Plone Default">
+  <layer insert-after="custom" 
+         name="blueawstats_images"/>
+  <layer insert-after="custom" 
+         name="blueawstats_templates"/>
+  <layer insert-after="custom" 
+         name="blueawstats_styles"/>
+ </skin-path>
+
+</object>

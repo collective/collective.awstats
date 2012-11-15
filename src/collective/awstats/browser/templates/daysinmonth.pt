@@ -1,0 +1,75 @@
+<div>
+    <table class="days-in-month">
+        <thead>
+            <th colspan="32" class="left">Tage im Monat</th>
+        </thead>
+        <tbody tal:define="graphsdata view/daysinmonthgraph">
+            <tr tal:define="bars view/daysinmonthbarnames">
+                <td tal:repeat="graphdata graphsdata"
+                    class="bottom daysinmonthgraph">
+                    <metal:macro use-macro="context/stats_macros/macros/vertical-graph" />
+                </td>
+            </tr>
+            <tr>
+                <tal:block repeat="graphdata graphsdata">
+                    <td tal:define="highlight python: graphdata['highlight'] and ' highlight' or ''"
+                        tal:attributes="class python: 'middle' + highlight">
+                        <span tal:replace="graphdata/dateday" />
+                    </td>
+                </tal:block>
+            </tr>
+        </tbody>
+    </table>
+    <table class="dayinmonthoverviewtable">
+        <tbody>
+            <tr>
+                <td><strong>Tag</strong></td>
+                <td class="visitcolor"><strong>Anzahl der Besuche</strong></td>
+                <td class="pagecolor"><strong>Seiten</strong></td>
+                <td class="hitcolor"><strong>Zugriffe</strong></td>
+                <td class="bytecolor"><strong>Bytes</strong></td>
+            </tr>
+            <tr tal:repeat="day view/daysinmonthoverview">
+                <tal:block condition="day/highlight">
+                    <td class="highlight">
+                        <span tal:replace="day/weekday" />
+                        <span tal:replace="string: . -" />
+                        <span tal:replace="day/date" />
+                    </td>
+                    <td class="highlight"><span tal:content="day/data/visit">100</span></td>
+                    <td class="highlight"><span tal:content="day/data/page">100</span></td>
+                    <td class="highlight"><span tal:content="day/data/hit">100</span></td>
+                    <td class="highlight"><span tal:content="day/data/byte">0.00B</span></td>
+                </tal:block>
+                <tal:block condition="python: not day['highlight']">
+                    <td>
+                        <span tal:replace="day/weekday" />
+                        <span tal:replace="string: . -" />
+                        <span tal:replace="day/date" />
+                    </td>
+                    <td><span tal:content="day/data/visit">100</span></td>
+                    <td><span tal:content="day/data/page">100</span></td>
+                    <td><span tal:content="day/data/hit">100</span></td>
+                    <td><span tal:content="day/data/byte">0.00B</span></td>
+                </tal:block>
+            </tr>
+            <tr tal:define="average view/daysinmonthaverage">
+                <td><strong>Average</strong></td>
+                <td><strong tal:content="average/visit">100</strong></td>
+                <td><strong tal:content="average/page">100</strong></td>
+                <td><strong tal:content="average/hit">100</strong></td>
+                <td><strong tal:content="average/byte">0.00B</strong></td>
+            </tr>
+            <tr tal:define="sum view/daysinmonthsum">
+                <td><strong>Total</strong></td>
+                <td><strong tal:content="sum/visit">100</strong></td>
+                <td><strong tal:content="sum/page">100</strong></td>
+                <td><strong tal:content="sum/hit">100</strong></td>
+                <td><strong tal:content="sum/byte">0.00B</strong></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        Der größte Wert eines Feldes in der Grafik wird als 100% dargestellt.
+    </p>
+</div>

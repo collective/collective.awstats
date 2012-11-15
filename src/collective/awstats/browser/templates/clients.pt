@@ -1,0 +1,29 @@
+<div>
+    <table class="clients">
+        <thead>
+            <th colspan="5" class="left">
+                <span>Rechner</span>
+                &nbsp;
+                <span>(Top 10)</span>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span tal:content="structure view/clientsummarytext">Infotext</span></td>
+                <td class="pagecolor datacolumn"><strong>Seiten</strong></td>
+                <td class="hitcolor datacolumn"><strong>Zugriffe</strong></td>
+                <td class="bytecolor datacolumn"><strong>Bytes</strong></td>
+                <td class="lastmodified"><strong>Letzter Zugriff</strong></td>
+            </tr>
+            <tr tal:repeat="client view/clientsummary">
+                <td class="left"><span tal:content="client/name">name</span></td>
+                <td><span tal:content="client/page">100</span></td>
+                <td><span tal:content="client/hit">100</span></td>
+                <td><span tal:content="client/byte">0.00B</span></td>
+                <td><span tal:content="client/lastaccess">01.01.2007 - 00:00</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+    </p>
+</div>

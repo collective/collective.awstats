@@ -1,0 +1,51 @@
+<div>
+    <table class="month-history">
+        <thead>
+            <th colspan="12" class="left">Monatsübersicht</th>
+        </thead>
+        <tbody tal:define="graphsdata view/monthgraph">
+            <tr tal:define="bars view/monthbarnames">
+                <td tal:repeat="graphdata graphsdata"
+                    class="bottom monthgraph">
+                    <metal:macro use-macro="context/stats_macros/macros/vertical-graph" />
+                </td>
+            </tr>
+            <tr>
+                <td tal:repeat="graphdata graphsdata" class="middle">
+                    <span tal:content="graphdata/month" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="monthoverviewtable">
+        <tbody>
+            <tr>
+                <td><strong>Monat</strong></td>
+                <td class="uniquecolor"><strong>Unterschiedliche Besucher</strong></td>
+                <td class="visitcolor"><strong>Anzahl der Besuche</strong></td>
+                <td class="pagecolor"><strong>Seiten</strong></td>
+                <td class="hitcolor"><strong>Zugriffe</strong></td>
+                <td class="bytecolor"><strong>Bytes</strong></td>
+            </tr>
+            <tr tal:repeat="month view/monthoverview">
+                <td><span tal:content="month/month">100</span></td>
+                <td><span tal:content="month/data/unique">100</span></td>
+                <td><span tal:content="month/data/visit">100</span></td>
+                <td><span tal:content="month/data/page">100</span></td>
+                <td><span tal:content="month/data/hit">100</span></td>
+                <td><span tal:content="month/data/byte">0.00B</span></td>
+            </tr>
+            <tr tal:define="sum view/monthsum">
+                <td><strong>Total</strong></td>
+                <td><strong tal:content="sum/unique">100</strong></td>
+                <td><strong tal:content="sum/visit">100</strong></td>
+                <td><strong tal:content="sum/page">100</strong></td>
+                <td><strong tal:content="sum/hit">100</strong></td>
+                <td><strong tal:content="sum/byte">0.00B</strong></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        Der größte Wert eines Feldes in der Grafik wird als 100% dargestellt.
+    </p>
+</div>

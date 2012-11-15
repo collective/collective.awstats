@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="blueawstats">
+
+<body>
+
+<metal:main fill-slot="main">
+
+    <div id="custompart">
+
+        <h1 tal:content="context/Title" class="documentFirstHeading">
+            Part Title
+        </h1>
+        
+        <p>
+          <strong>Domain:</strong>
+          <span tal:replace="context/getDomain" /><br />
+        </p>
+        
+        <p>
+          <strong>Epoch:</strong>
+          <span tal:replace="context/getEpoch" /><br />
+        </p>
+        
+        <p>
+          <strong>Generate Graph:</strong>
+          <span tal:replace="context/getGenerateGraph" /><br />
+        </p>
+        
+        <strong>Structure definitions</strong>:<br />
+        <pre tal:content="context/getDefinitions">defs</pre>
+        
+    </div>
+</metal:main>
+</body>
+</html>

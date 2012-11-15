@@ -1,0 +1,48 @@
+# archgenxml generated POT File
+# unknown <unknown>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: BlueAwstats\n"
+"POT-Creation-Date: Thu Nov  1 11:55:57 2007\n"
+"PO-Revision-Date: Thu Nov  1 11:55:57 2007\n"
+"Last-Translator: unknown <unknown>\n"
+"Language-Team: unknown <unknown>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: latin1 utf-8\n"
+"Domain: BlueAwstats\n"
+
+#. Default: "Definitions"
+#: CustomPart.py
+msgid "BlueAwstats_label_definitions"
+msgstr ""
+
+#. Default: "Displaygrouped"
+#: Awstats.py
+msgid "BlueAwstats_label_displaygrouped"
+msgstr ""
+
+#. Default: "Domain"
+#: CustomPart.py
+msgid "BlueAwstats_label_domain"
+msgstr ""
+
+#. Default: "Epoch"
+#: CustomPart.py
+msgid "BlueAwstats_label_epoch"
+msgstr ""
+
+#. Default: "Generategraph"
+#: CustomPart.py
+msgid "BlueAwstats_label_generateGraph"
+msgstr ""
+
+#. Default: "Standardparts"
+#: Awstats.py
+msgid "BlueAwstats_label_standardparts"
+msgstr ""
+

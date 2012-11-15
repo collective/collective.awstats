@@ -1,0 +1,50 @@
+<div>
+    <table class="weekdays">
+        <thead>
+            <th colspan="7" class="left">Wochentage</th>
+        </thead>
+        <tbody tal:define="graphsdata view/weekdaysgraph">
+            <tr tal:define="bars view/weekdaysbarnames">
+                <td tal:repeat="graphdata graphsdata"
+                    class="bottom weekdaysgraph">
+                    <metal:macro use-macro="context/stats_macros/macros/vertical-graph" />
+                </td>
+            </tr>
+            <tr>
+                <tal:block repeat="graphdata graphsdata">
+                    <td tal:define="highlight python: graphdata['highlight'] and ' highlight' or ''"
+                        tal:attributes="class python: 'middle' + highlight">
+                        <span tal:replace="graphdata/day" />
+                    </td>
+                </tal:block>
+            </tr>
+        </tbody>
+    </table>
+    <table class="weekdaysoverviewtable">
+        <tbody>
+            <tr>
+                <td><strong>Tag</strong></td>
+                <td class="pagecolor"><strong>Seiten</strong></td>
+                <td class="hitcolor"><strong>Zugriffe</strong></td>
+                <td class="bytecolor"><strong>Bytes</strong></td>
+            </tr>
+            <tr tal:repeat="day view/weekdaysoverview">
+                <tal:block condition="day/highlight">
+                    <td class="highlight"><span tal:replace="day/day" /></td>
+                    <td class="highlight"><span tal:content="day/data/page">100</span></td>
+                    <td class="highlight"><span tal:content="day/data/hit">100</span></td>
+                    <td class="highlight"><span tal:content="day/data/byte">0.00B</span></td>
+                </tal:block>
+                <tal:block condition="python: not day['highlight']">
+                    <td><span tal:replace="day/day" /></td>
+                    <td><span tal:content="day/data/page">100</span></td>
+                    <td><span tal:content="day/data/hit">100</span></td>
+                    <td><span tal:content="day/data/byte">0.00B</span></td>
+                </tal:block>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        Der größte Wert eines Feldes in der Grafik wird als 100% dargestellt.
+    </p>
+</div>

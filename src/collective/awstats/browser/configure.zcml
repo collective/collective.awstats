@@ -1,5 +1,147 @@
 <configure xmlns="http://namespaces.zope.org/zope"
-           xmlns:browser="http://namespaces.zope.org/browser"
-           xmlns:five="http://namespaces.zope.org/five">
+           xmlns:browser="http://namespaces.zope.org/browser">
+
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="statsview"
+        class=".stats.StatsView"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IStatsView"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="statschooser"
+        class=".statschooser.StatsChooser"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IStatsChooser"
+        template="templates/statschooser.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="overview"
+        class=".overview.Overview"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IOverview"
+        template="templates/overview.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="monthhistory"
+        class=".monthhistory.MonthHistory"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IMonthHistory"
+        template="templates/monthhistory.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="daysinmonth"
+        class=".daysinmonth.DaysInMonth"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IDaysInMonth"
+        template="templates/daysinmonth.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="weekdays"
+        class=".weekdays.Weekdays"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IWeekdays"
+        template="templates/weekdays.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="servertime"
+        class=".servertime.Servertime"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IServertime"
+        template="templates/servertime.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="countries"
+        class=".countries.Countries"
+        permission="zope.Public"
+        allowed_interface=".interfaces.ICountries"
+        template="templates/countries.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="clients"
+        class=".clients.Clients"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IClients"
+        template="templates/clients.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="robots"
+        class=".robots.Robots"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IRobots"
+        template="templates/robots.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="sessions"
+        class=".sessions.Sessions"
+        permission="zope.Public"
+        allowed_interface=".interfaces.ISessions"
+        template="templates/sessions.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="datatypes"
+        class=".datatypes.Datatypes"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IDatatypes"
+        template="templates/datatypes.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="siteurl"
+        class=".siteurl.SiteURL"
+        permission="zope.Public"
+        allowed_interface=".interfaces.ISiteURL"
+        template="templates/siteurl.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="operatingsystems"
+        class=".operatingsystems.OperatingSystems"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IOperatingSystems"
+        template="templates/operatingsystems.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.IAwstats"
+        name="browsers"
+        class=".browsers.Browsers"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IBrowsers"
+        template="templates/browsers.pt"
+    />
+    
+    <browser:page
+        for="Products.BlueAwstats.interfaces.ICustomPart"
+        name="custompart"
+        class=".custompart.CustomPart"
+        permission="zope.Public"
+        allowed_interface=".interfaces.ICustomPart"
+        template="templates/custompart.pt"
+    />
 
 </configure>

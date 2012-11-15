@@ -1,0 +1,32 @@
+<div>
+    <table class="robots">
+        <thead>
+            <th colspan="4" class="left">
+                <span>Robots/Spiders</span>
+                &nbsp;
+                <span>(Suchmaschinen)</span>
+                &nbsp;
+                <span>(Top 10)</span>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span>10 Zugriffe durch Suchmaschinen*</span></td>
+                <td class="hitcolor datacolumn"><strong>Zugriffe</strong></td>
+                <td class="bytecolor datacolumn"><strong>Bytes</strong></td>
+                <td class="lastmodified"><strong>Letzter Zugriff</strong></td>
+            </tr>
+            <tr tal:repeat="robot view/robotsummary">
+                <td class="left"><span tal:content="robot/name">name</span></td>
+                <td><span tal:content="robot/hit">100</span></td>
+                <td><span tal:content="robot/byte">0.00B</span></td>
+                <td><span tal:content="robot/lastaccess">01.01.2007 - 00:00</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        * Die Robots die hier angezeigt werden zeigen Treffer oder Traffic 
+        welchen Besucher "nicht gesehen" haben und sind in den übrigen 
+        Diagrammen nicht enthalten.
+    </p>
+</div>

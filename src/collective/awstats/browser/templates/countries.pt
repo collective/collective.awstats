@@ -1,0 +1,40 @@
+<div>
+    <table class="countries">
+        <thead>
+            <th colspan="7" class="left">
+                <span>Domains/Länder der Besucher</span>
+                &nbsp;
+                <span>(Top 10)</span>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td colspan="2"><strong>Domains/Länder</strong></td>
+                <td class="pagecolor"><strong>Seiten</strong></td>
+                <td class="hitcolor"><strong>Zugriffe</strong></td>
+                <td class="bytecolor"><strong>Bytes</strong></td>
+                <td></td>
+            </tr>
+            <tr tal:repeat="country view/countrydata">
+                <td class="flag">
+                    <img tal:attributes="src country/flag;
+                                         alt country/flag" />
+                </td>
+                <td class="country"><span tal:content="country/country" /></td>
+                <td class="domain"><span tal:content="country/domain" /></td>
+                <td class="datacolumn"><span tal:content="country/text/page">100</span></td>
+                <td class="datacolumn"><span tal:content="country/text/hit">100</span></td>
+                <td class="datacolumn"><span tal:content="country/text/byte">0.00B</span></td>
+                <td tal:define="graphdata country;
+                                bars view/countrybarnames"
+                    class="countrygraph">
+                    <metal:macro use-macro="context/stats_macros/macros/horizontal-graph" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        Der größte Wert eines Feldes in der Grafik wird als 100% dargestellt.
+    </p>
+</div>

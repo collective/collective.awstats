@@ -1,0 +1,23 @@
+<div metal:define-macro="sessions">
+    <table class="sessions">
+        <thead>
+            <th colspan="3" class="left">
+                <span>Aufenthaltsdauer</span>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td class="visitcolor datacolumn"><strong>Anzahl der Besuche</strong></td>
+                <td class="visitcolor datacolumn"><strong>Prozent</strong></td>
+            </tr>
+            <tr tal:repeat="session view/sessionsummary">
+                <td class="left"><span tal:content="session/name">name</span></td>
+                <td><span tal:content="session/count">100</span></td>
+                <td><span tal:content="session/percent">0 %</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+    </p>
+</div>

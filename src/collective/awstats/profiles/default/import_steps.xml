@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<import-steps>
+
+<import-step 
+    id="BlueAwstats-GS-dependencies" 
+    handler="Products.BlueAwstats.setuphandlers.installGSDependencies"
+    title="Dependend GS profiles for BlueAwstats"
+    version="2007-11-04T16:51:47.573608">
+   <dependency step="plone-final"/>
+   Install Generic Setup profile dependencies for BlueAwstats
+ </import-step>
+
+ <import-step 
+    id="BlueAwstats-QI-dependencies" 
+    handler="Products.BlueAwstats.setuphandlers.installQIDependencies"
+    title="Dependend QI installables for BlueAwstats"
+    version="2007-11-04T16:51:47.573608">
+   <dependency step="2007-11-04T16:51:47.573608-GS-dependencies"/>
+   Install quickinstaller dependencies for BlueAwstats
+ </import-step>
+ 
+     
+<!-- ##code-section ADDITIONALSTEPS -->
+<!-- ##/code-section ADDITIONALSTEPS --> 
+
+</import-steps>
+ 

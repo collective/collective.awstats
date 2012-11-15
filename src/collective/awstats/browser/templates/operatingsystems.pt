@@ -1,0 +1,27 @@
+<div>
+    <table class="operatingsystems">
+        <thead>
+            <th colspan="4" class="left">
+                <span>Betriebssysteme</span>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2"><strong>Betriebssysteme</strong></td>
+                <td class="hitcolor datacolumn"><strong>Zugriffe</strong></td>
+                <td class="hitcolor datacolumn"><strong>Prozent</strong></td>
+            </tr>
+            <tr tal:repeat="os view/ossummary">
+                <td class="left icon">
+                    <img tal:attributes="src os/icon;
+                                         alt os/name" />
+                </td>
+                <td class="left"><span tal:content="os/name" /></td>
+                <td><span tal:content="os/hit">100</span></td>
+                <td><span tal:content="os/hitpercent">0 %</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+    </p>
+</div>

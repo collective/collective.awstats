@@ -1,0 +1,36 @@
+<div>
+    <table class="custompart">
+        <thead>
+            <th colspan="#"
+                class="left"
+                tal:attributes="colspan view/columncount">
+                <span tal:content="view/parttitle">Title</span>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+              <tal:column repeat="col view/customparthead">
+                <td tal:attributes="class col/style|nothing">
+                  <tal:title condition="col/title|nothing">
+                   <strong tal:content="col/title">Title</strong>
+                  </tal:title>
+                </td>
+              </tal:column>
+            </tr>
+            <tr tal:repeat="row view/custompartdata">
+                <td class="left"><span tal:content="row/title" /></td>
+                <td tal:define="graphdata row;
+                                bars view/custompartbarnames"
+                    tal:condition="row/rendergraph"
+                    class="siteurlgraph">
+                    <metal:macro use-macro="context/stats_macros/macros/horizontal-graph" />
+                </td>
+                <td tal:repeat="col row/columns">
+                  <span tal:content="col" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+    </p>
+</div>

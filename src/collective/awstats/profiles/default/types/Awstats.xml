@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<object name="Awstats"
+        meta_type="Factory-based Type Information with dynamic views"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+   
+ <property name="title">Awstats</property>
+ <property name="description"></property>
+ <property name="content_icon">awstats_icon.png</property>
+ <property name="content_meta_type">Awstats</property>
+ <property name="product">BlueAwstats</property>
+ <property name="factory">addAwstats</property>
+ <property name="immediate_view">awstats_view</property>
+ <property name="global_allow">True</property>
+ <property name="filter_content_types">True</property>
+ <property name="allowed_content_types">
+   <element value="CustomPart"/>
+ </property>
+ <property name="allow_discussion">False</property>
+ <property name="default_view">awstats_view</property>
+ <property name="view_methods">
+  <element value="awstats_view"/>
+ </property>
+ <property name="default_view_fallback">False</property>
+ <alias from="(Default)" to="(dynamic view)"/>
+ <alias from="view" to="(selected layout)"/>
+ <alias from="edit" to="base_edit"/>
+ <alias from="properties" to="base_metadata"/>
+ <alias from="sharing" to="folder_localrole_form"/>
+ <action title="View" action_id="view"
+         category="object" condition_expr=""
+         url_expr="string:${object_url}/view" visible="True">
+  <permission value="View"/>
+ </action>
+ <action title="Edit" action_id="edit"
+         category="object" condition_expr=""
+         url_expr="string:${object_url}/edit" visible="True">
+  <permission value="Modify portal content"/>
+ </action>
+ <action title="Properties" action_id="metadata"
+         category="object" condition_expr=""
+         url_expr="string:${object_url}/properties" visible="True">
+  <permission value="Modify portal content"/>
+ </action>
+</object>

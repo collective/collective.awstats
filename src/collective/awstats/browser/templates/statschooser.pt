@@ -1,0 +1,58 @@
+<div class="statschooser">
+    <div>
+        <strong>Zuletzt aktualisiert:</strong>
+        &nbsp;
+        <span tal:content="view/lastmodified" />
+    </div>
+    <form action="#" method="post"
+          tal:attributes="action context/absolute_url">
+        <select name="domain"
+                tal:define="alloweddomains view/alloweddomains"
+                tal:condition="python: len(alloweddomains) > 1">
+            <tal:option repeat="domain alloweddomains">
+                <tal:selected condition="python: view.domainSelected(domain)">
+                    <option tal:attributes="value domain;
+                                            selected string: selected"
+                            tal:content="domain">www.google.at</option>
+                </tal:selected>
+                <tal:notselected condition="python: not view.domainSelected(domain)">
+                    <option tal:attributes="value domain"
+                            tal:content="domain">www.google.at</option>
+                </tal:notselected>
+            </tal:option>
+        </select>
+        <select name="currentmonth" tal:define="month view/monthselection">
+            <tal:option repeat="m month">
+                <tal:selected condition="python: view.monthSelected(m[0])">
+                    <option tal:attributes="value python: m[0];
+                                            selected string: selected"
+                            tal:content="python: m[1]">www.google.at</option>
+                </tal:selected>
+                <tal:notselected condition="python: not view.monthSelected(m[0])">
+                    <option tal:attributes="value python: m[0]"
+                            tal:content="python: m[1]">www.google.at</option>
+                </tal:notselected>
+            </tal:option>
+        </select>
+        <select name="currentyear" tal:define="years view/yearselection">
+            <tal:option repeat="year years">
+                <tal:selected condition="python: view.yearSelected(year)">
+                    <option tal:attributes="value year;
+                                            selected string: selected"
+                            tal:content="year">www.google.at</option>
+                </tal:selected>
+                <tal:notselected condition="python: not view.yearSelected(year)">
+                    <option tal:attributes="value year"
+                            tal:content="year">www.google.at</option>
+                </tal:notselected>
+            </tal:option>
+        </select>
+        <input type="submit" value="anzeigen" />
+    </form>
+    <form action="#" method="post"
+          tal:attributes="action context/absolute_url">
+        <input type="submit" name="reload" value="reload statistics" />
+        <input type="hidden" name="domain"
+               tal:attributes="value python: context.REQUEST.get('domain', '')" />
+    </form>
+</div>

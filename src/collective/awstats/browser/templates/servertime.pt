@@ -1,0 +1,41 @@
+<div>
+    <table class="servertime">
+        <thead>
+            <th colspan="24" class="left">Serverzeit</th>
+        </thead>
+        <tbody tal:define="graphsdata view/servertimegraph">
+            <tr tal:define="bars view/servertimebarnames">
+                <td tal:repeat="graphdata graphsdata"
+                    class="bottom servertimegraph">
+                    <metal:macro use-macro="context/stats_macros/macros/vertical-graph" />
+                </td>
+            </tr>
+            <tr>
+                <tal:block repeat="graphdata graphsdata">
+                    <td class="middle">
+                        <span tal:replace="graphdata/hour" />
+                    </td>
+                </tal:block>
+            </tr>
+        </tbody>
+    </table>
+    <table class="servertimeoverviewtable">
+        <tbody>
+            <tr>
+                <td><strong>Stunden (Serverzeit)</strong></td>
+                <td class="pagecolor"><strong>Seiten</strong></td>
+                <td class="hitcolor"><strong>Zugriffe</strong></td>
+                <td class="bytecolor"><strong>Bytes</strong></td>
+            </tr>
+            <tr tal:repeat="servertime view/servertimeoverview">
+                <td><span tal:content="servertime/hour">00</span></td>
+                <td><span tal:content="servertime/data/page">100</span></td>
+                <td><span tal:content="servertime/data/hit">100</span></td>
+                <td><span tal:content="servertime/data/byte">0.00B</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        Der größte Wert eines Feldes in der Grafik wird als 100% dargestellt.
+    </p>
+</div>

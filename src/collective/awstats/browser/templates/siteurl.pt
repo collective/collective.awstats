@@ -1,0 +1,35 @@
+<div>
+    <table class="site-url">
+        <thead>
+            <th colspan="6" class="left">
+                <span>Seiten-URL</span>
+                &nbsp;
+                <span>(Top 10)</span>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td tal:content="view/siteurlinfotext"></td>
+                <td class="hitcolor datacolumn"><strong>Zugriffe</strong></td>
+                <td class="sizeaveragecolor datacolumn"><strong>Durchschnitt</strong></td>
+                <td class="entrancecolor datacolumn"><strong>Einstiegsseiten</strong></td>
+                <td class="exitcolor datacolumn"><strong>Exitseiten</strong></td>
+                <td></td>
+            </tr>
+            <tr tal:repeat="url view/siteurldata">
+                <td class="left"><span tal:content="url/name" /></td>
+                <td><span tal:content="url/hit" /></td>
+                <td><span tal:content="url/sizeaverage">100</span></td>
+                <td><span tal:content="url/entrance">100</span></td>
+                <td><span tal:content="url/exit">0.00B</span></td>
+                <td tal:define="graphdata url;
+                                bars view/siteurlbarnames"
+                    class="siteurlgraph">
+                    <metal:macro use-macro="context/stats_macros/macros/horizontal-graph" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+    </p>
+</div>

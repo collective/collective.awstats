@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="blueawstats">
+
+<head>
+    <metal:top fill-slot="top_slot">
+        <tal:block condition="python:not user.has_role('Manager', here)">
+            <tal:border define="dummy python:request.set('disable_border', True)" />
+        </tal:block>
+    </metal:top>
+    <metal:block fill-slot="column_one_slot" />
+    <metal:block fill-slot="column_two_slot" />
+</head>
+
+<body>
+<metal:main fill-slot="main">
+
+    <div id="blueawstats" tal:define="view context/@@statsview;
+                                      dummy view/initialize">
+
+        <h1 tal:condition="python: view.statsavailable and view.statsallowed">
+            Statistik für <span tal:content="view/currentstaturl" />
+        </h1>
+
+        <tal:block condition="view/statsavailable">
+            <tal:block condition="view/statsallowed">
+                <center tal:condition="not:view/displaygrouped">
+                  <ul class="partlinks">
+                    <li tal:repeat="partlink view/partlinks">
+                      <a href="#"
+                         tal:attributes="title partlink/title;
+                                         class partlink/style;
+                                         href partlink/url;"
+                         tal:content="structure partlink/title">Link</a>
+                    </li>
+                  </ul>
+                </center>
+                <tal:part repeat="part view/statsparts">
+                  <tal:block replace="structure python:path(part)" />
+                </tal:part>
+            </tal:block>
+            <tal:block condition="python: not view.statsallowed">
+                <div>
+                    <h1>Zugriff verweigert.</h1>
+                    <p>
+                        Der Zugriff wurde verweigert. Es können keine Statistiken
+                        angezeigt werden.
+                    </p>
+                </div>
+            </tal:block>
+        </tal:block>
+        
+        <tal:block condition="python: not view.statsavailable">
+            <div>
+                <h1>Awstats Management Tool Nicht vorhanden.</h1>
+                <p>
+                    Das Awstats Management Tool kann nicht gefunden werden.
+                    Bitte wenden Sie sich an den Systemadministrator.
+                </p>
+            </div>
+        </tal:block>
+    
+    </div>
+
+</metal:main>
+</body>
+</html>

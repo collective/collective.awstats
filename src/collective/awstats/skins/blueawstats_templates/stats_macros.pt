@@ -1,0 +1,23 @@
+<div metal:define-macro="vertical-graph">
+    <center>
+        <table cellpadding="0" cellspacing="0" class="verticalgraph">
+            <tbody>
+                <tr tal:define="data python: graphdata['data']">
+                    <td tal:repeat="bar bars" class="bottom barwrapper">
+                        <div tal:attributes="class python: 'verticalbar %scolor' % bar;
+                                             style python: 'padding-bottom: %spx' % data[bar]"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+</div>
+
+<div metal:define-macro="horizontal-graph">
+    <div class="horizontalgraph" tal:define="data python: graphdata['data']">
+        <tal:block tal:repeat="bar bars">
+            <div tal:attributes="class python: 'horizontalbar %scolor' % bar;
+                                 style python: 'width: %spx' % data[bar]"></div>
+        </tal:block>
+    </div>
+</div>
