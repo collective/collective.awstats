@@ -26,7 +26,7 @@ from zope.interface import implements
 from interfaces import IRobots
 from base import StatsBase
 
-from Products.BlueAwstats.constants import *
+from collective.awstats.constants import *
 
 class Robots(StatsBase):
     """Implementation details see interfaces.IRobots

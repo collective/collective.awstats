@@ -3,7 +3,7 @@
 
 <import-step 
     id="BlueAwstats-GS-dependencies" 
-    handler="Products.BlueAwstats.setuphandlers.installGSDependencies"
+    handler="collective.awstats.setuphandlers.installGSDependencies"
     title="Dependend GS profiles for BlueAwstats"
     version="2007-11-04T16:51:47.573608">
    <dependency step="plone-final"/>
@@ -12,7 +12,7 @@
 
  <import-step 
     id="BlueAwstats-QI-dependencies" 
-    handler="Products.BlueAwstats.setuphandlers.installQIDependencies"
+    handler="collective.awstats.setuphandlers.installQIDependencies"
     title="Dependend QI installables for BlueAwstats"
     version="2007-11-04T16:51:47.573608">
    <dependency step="2007-11-04T16:51:47.573608-GS-dependencies"/>

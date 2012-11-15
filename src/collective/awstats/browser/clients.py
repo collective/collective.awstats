@@ -26,7 +26,7 @@ from zope.interface import implements
 from interfaces import IClients
 from base import StatsBase
 
-from Products.BlueAwstats.constants import *
+from collective.awstats.constants import *
 
 class Clients(StatsBase):
     """Implementation details see interfaces.IClients

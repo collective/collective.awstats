@@ -36,7 +36,7 @@ from Products.CMFCore.utils import getToolByName
 from interfaces import IStatsView
 from base import StatsBase
 
-from Products.BlueAwstats.constants import *
+from collective.awstats.constants import *
     
 class StatsView(StatsBase):
     

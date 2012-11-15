@@ -30,7 +30,7 @@ __docformat__ = 'plaintext'
 
 from StringIO import StringIO
 from Products.CMFCore.utils import getToolByName
-from Products.BlueAwstats.config import PROJECTNAME
+from collective.awstats.config import PROJECTNAME
 
 def install(self, reinstall=False):
     """External Method to install BlueAwstats 

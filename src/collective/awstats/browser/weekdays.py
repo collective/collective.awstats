@@ -26,7 +26,7 @@ from zope.interface import implements
 from interfaces import IWeekdays
 from base import StatsBase
 
-from Products.BlueAwstats.constants import *
+from collective.awstats.constants import *
 
 class Weekdays(StatsBase):
     """Implementation details see interfaces.IWeekdays

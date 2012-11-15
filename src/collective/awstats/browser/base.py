@@ -28,8 +28,8 @@ import calendar
  
 from Products.Five import BrowserView
 
-from Products.BlueAwstats.interfaces import IAwstatsProvider
-from Products.BlueAwstats.constants import *
+from collective.awstats.interfaces import IAwstatsProvider
+from collective.awstats.constants import *
 
 class StatsBase(BrowserView):
     """Base for stats.

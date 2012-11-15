@@ -72,6 +72,6 @@ PRODUCT_DEPENDENCIES = []
 
 # Load custom configuration not managed by archgenxml
 try:
-    from Products.BlueAwstats.AppConfig import *
+    from collective.awstats.AppConfig import *
 except ImportError:
     pass

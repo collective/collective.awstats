@@ -34,10 +34,10 @@ from interfaces import ICustomPart
 
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
-from Products.BlueAwstats.config import *
+from collective.awstats.config import *
 
 ##code-section module-header #fill in your manual code here
-from Products.BlueAwstats.interfaces import IAwstatsProvider
+from collective.awstats.interfaces import IAwstatsProvider
 ##/code-section module-header
 
 schema = Schema((

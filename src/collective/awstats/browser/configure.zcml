@@ -2,7 +2,7 @@
            xmlns:browser="http://namespaces.zope.org/browser">
 
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="statsview"
         class=".stats.StatsView"
         permission="zope.Public"
@@ -10,7 +10,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="statschooser"
         class=".statschooser.StatsChooser"
         permission="zope.Public"
@@ -19,7 +19,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="overview"
         class=".overview.Overview"
         permission="zope.Public"
@@ -28,7 +28,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="monthhistory"
         class=".monthhistory.MonthHistory"
         permission="zope.Public"
@@ -37,7 +37,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="daysinmonth"
         class=".daysinmonth.DaysInMonth"
         permission="zope.Public"
@@ -46,7 +46,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="weekdays"
         class=".weekdays.Weekdays"
         permission="zope.Public"
@@ -55,7 +55,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="servertime"
         class=".servertime.Servertime"
         permission="zope.Public"
@@ -64,7 +64,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="countries"
         class=".countries.Countries"
         permission="zope.Public"
@@ -73,7 +73,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="clients"
         class=".clients.Clients"
         permission="zope.Public"
@@ -82,7 +82,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="robots"
         class=".robots.Robots"
         permission="zope.Public"
@@ -91,7 +91,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="sessions"
         class=".sessions.Sessions"
         permission="zope.Public"
@@ -100,7 +100,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="datatypes"
         class=".datatypes.Datatypes"
         permission="zope.Public"
@@ -109,7 +109,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="siteurl"
         class=".siteurl.SiteURL"
         permission="zope.Public"
@@ -118,7 +118,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="operatingsystems"
         class=".operatingsystems.OperatingSystems"
         permission="zope.Public"
@@ -127,7 +127,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.IAwstats"
+        for="collective.awstats.interfaces.IAwstats"
         name="browsers"
         class=".browsers.Browsers"
         permission="zope.Public"
@@ -136,7 +136,7 @@
     />
     
     <browser:page
-        for="Products.BlueAwstats.interfaces.ICustomPart"
+        for="collective.awstats.interfaces.ICustomPart"
         name="custompart"
         class=".custompart.CustomPart"
         permission="zope.Public"

@@ -34,7 +34,7 @@ from interfaces import IAwstats
 
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
-from Products.BlueAwstats.config import *
+from collective.awstats.config import *
 
 ##code-section module-header #fill in your manual code here
 ##/code-section module-header

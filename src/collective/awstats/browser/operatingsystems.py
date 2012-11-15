@@ -26,7 +26,7 @@ from zope.interface import implements
 from interfaces import IOperatingSystems
 from base import StatsBase
 
-from Products.BlueAwstats.constants import *
+from collective.awstats.constants import *
 
 class OperatingSystems(StatsBase):
     """Implementation details see interfaces.IOperatingSystems

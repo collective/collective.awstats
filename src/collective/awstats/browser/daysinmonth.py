@@ -28,7 +28,7 @@ from zope.interface import implements
 from interfaces import IDaysInMonth
 from base import StatsBase
 
-from Products.BlueAwstats.constants import *
+from collective.awstats.constants import *
 
 class DaysInMonth(StatsBase):
     """Implementation details see interfaces.IDaysInMonth
