@@ -9,13 +9,13 @@
 
  <object name="blueawstats_images"
          meta_type="Filesystem Directory View"
-         directory="BlueAwstats/skins/blueawstats_images"/>
+         directory="awstats/skins/blueawstats_images"/>
  <object name="blueawstats_templates"
          meta_type="Filesystem Directory View"
-         directory="BlueAwstats/skins/blueawstats_templates"/>
+         directory="awstats/skins/blueawstats_templates"/>
  <object name="blueawstats_styles"
          meta_type="Filesystem Directory View"
-         directory="BlueAwstats/skins/blueawstats_styles"/>
+         directory="awstats/skins/blueawstats_styles"/>
  
  <skin-path name="Plone Default">
   <layer insert-after="custom" 

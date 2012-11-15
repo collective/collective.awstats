@@ -7,7 +7,7 @@
  <permission>Access contents information</permission>
  <permission>Modify portal content</permission>
  <permission>View Statistics</permission>
- <permission>BlueAwstats: Add Awstats</permission>
+ <permission>awstats: Add Awstats</permission>
  <permission>Add portal content</permission>
  <state state_id="awstats" 
         title="awstats">
@@ -21,7 +21,7 @@
                   acquired="False">
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="BlueAwstats: Add Awstats"
+  <permission-map name="awstats: Add Awstats"
                   acquired="False">
    <permission-role>Manager</permission-role>
   </permission-map>

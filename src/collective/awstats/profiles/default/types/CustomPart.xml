@@ -7,7 +7,7 @@
  <property name="description"></property>
  <property name="content_icon">awstats_part_icon.png</property>
  <property name="content_meta_type">CustomPart</property>
- <property name="product">BlueAwstats</property>
+ <property name="product">awstats</property>
  <property name="factory">addCustomPart</property>
  <property name="immediate_view">custompart_view</property>
  <property name="global_allow">False</property>

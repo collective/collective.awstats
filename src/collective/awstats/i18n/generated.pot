@@ -2,7 +2,7 @@
 # unknown <unknown>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: BlueAwstats\n"
+"Project-Id-Version: awstats\n"
 "POT-Creation-Date: Thu Nov  1 11:55:57 2007\n"
 "PO-Revision-Date: Thu Nov  1 11:55:57 2007\n"
 "Last-Translator: unknown <unknown>\n"
@@ -14,35 +14,35 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: latin1 utf-8\n"
-"Domain: BlueAwstats\n"
+"Domain: awstats\n"
 
 #. Default: "Definitions"
 #: CustomPart.py
-msgid "BlueAwstats_label_definitions"
+msgid "awstats_label_definitions"
 msgstr ""
 
 #. Default: "Displaygrouped"
 #: Awstats.py
-msgid "BlueAwstats_label_displaygrouped"
+msgid "awstats_label_displaygrouped"
 msgstr ""
 
 #. Default: "Domain"
 #: CustomPart.py
-msgid "BlueAwstats_label_domain"
+msgid "awstats_label_domain"
 msgstr ""
 
 #. Default: "Epoch"
 #: CustomPart.py
-msgid "BlueAwstats_label_epoch"
+msgid "awstats_label_epoch"
 msgstr ""
 
 #. Default: "Generategraph"
 #: CustomPart.py
-msgid "BlueAwstats_label_generateGraph"
+msgid "awstats_label_generateGraph"
 msgstr ""
 
 #. Default: "Standardparts"
 #: Awstats.py
-msgid "BlueAwstats_label_standardparts"
+msgid "awstats_label_standardparts"
 msgstr ""
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# File: BlueAwstats.py
+# File: awstats.py
 #
 # Copyright (c) 2007 by BDA
 # Generator: ArchGenXML Version 2.0-beta3 (dev/svn)
@@ -43,18 +43,18 @@ from bda.awstatsparser.defaults import *
 ##/code-section config-head
 
 
-PROJECTNAME = "BlueAwstats"
+PROJECTNAME = "awstats"
 
 # Permissions
 DEFAULT_ADD_CONTENT_PERMISSION = "Add portal content"
 setDefaultRoles(DEFAULT_ADD_CONTENT_PERMISSION, ('Manager', 'Owner'))
 ADD_CONTENT_PERMISSIONS = {
-    'Awstats': 'BlueAwstats: Add Awstats',
-    'CustomPart': 'BlueAwstats: Add CustomPart',
+    'Awstats': 'awstats: Add Awstats',
+    'CustomPart': 'awstats: Add CustomPart',
 }
 
-setDefaultRoles('BlueAwstats: Add Awstats', ('Manager','Owner'))
-setDefaultRoles('BlueAwstats: Add CustomPart', ('Manager','Owner'))
+setDefaultRoles('awstats: Add Awstats', ('Manager','Owner'))
+setDefaultRoles('awstats: Add CustomPart', ('Manager','Owner'))
 
 product_globals = globals()
 

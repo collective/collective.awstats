@@ -46,8 +46,8 @@ schema = Schema((
         name='domain',
         widget=SelectionWidget(
             label='Domain',
-            label_msgid='BlueAwstats_label_domain',
-            i18n_domain='BlueAwstats',
+            label_msgid='awstats_label_domain',
+            i18n_domain='awstats',
         ),
         vocabulary="getDomainVocab"
     ),
@@ -56,8 +56,8 @@ schema = Schema((
         name='epoch',
         widget=SelectionWidget(
             label='Epoch',
-            label_msgid='BlueAwstats_label_epoch',
-            i18n_domain='BlueAwstats',
+            label_msgid='awstats_label_epoch',
+            i18n_domain='awstats',
         ),
         vocabulary="getEpochVocab"
     ),
@@ -66,8 +66,8 @@ schema = Schema((
         name='definitions',
         widget=TextAreaWidget(
             label='Definitions',
-            label_msgid='BlueAwstats_label_definitions',
-            i18n_domain='BlueAwstats',
+            label_msgid='awstats_label_definitions',
+            i18n_domain='awstats',
         )
     ),
 
@@ -75,8 +75,8 @@ schema = Schema((
         name='generateGraph',
         widget=BooleanField._properties['widget'](
             label='Generategraph',
-            label_msgid='BlueAwstats_label_generateGraph',
-            i18n_domain='BlueAwstats',
+            label_msgid='awstats_label_generateGraph',
+            i18n_domain='awstats',
         )
     ),
 

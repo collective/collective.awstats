@@ -1,13 +1,13 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="BlueAwstats">
+    i18n_domain="awstats">
 
   <genericsetup:registerProfile
       name="default"
-      title="BlueAwstats"
+      title="awstats"
       directory="profiles/default"
-      description="Extension profile for BlueAwstats."
+      description="Extension profile for awstats."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   

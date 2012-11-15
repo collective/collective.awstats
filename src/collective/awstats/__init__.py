@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# File: BlueAwstats.py
+# File: awstats.py
 #
 # Copyright (c) 2007 by BDA
 # Generator: ArchGenXML Version 2.0-beta3 (dev/svn)
@@ -37,7 +37,7 @@ __docformat__ = 'plaintext'
 #       use the protected code section at the bottom of initialize().
 
 import logging
-logger = logging.getLogger('BlueAwstats')
+logger = logging.getLogger('awstats')
 logger.debug('Installing Product')
 
 import os

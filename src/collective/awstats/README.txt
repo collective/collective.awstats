@@ -1,7 +1,7 @@
-BlueAwstats
+awstats
 ===========
 
-BlueAwstats is a products for displaying Awstats generated statistice inside
+awstats is a products for displaying Awstats generated statistice inside
 a plone site.
 
 Version:
@@ -15,7 +15,7 @@ Requirements
   * Plone 2.5
   * Zope 2.9
   * bda.awstatsparser
-  * BlueAwstatsManagementTool
+  * awstatsManagementTool
 
 Installation:
 =============
@@ -24,10 +24,10 @@ Installation:
   
   * Start Zope
   
-  * Go to the ZMI and add a BlueAwstatsManagementTool. On further information
+  * Go to the ZMI and add a awstatsManagementTool. On further information
     about the Management Tool see README.txt of this product.
   
-  * Install the BlueAwstats Product with portal quickinstaller
+  * Install the awstats Product with portal quickinstaller
 
 Changes:
 ========
@@ -45,7 +45,7 @@ Awstats object:
   Manager to do that.
   
   The ability to create more than one awstats objects gives you beyond the
-  features of the BlueAwstatsManagementTool makes the permission management
+  features of the awstatsManagementTool makes the permission management
   more fine-grained.
   
   On Each Awstats object you can specify which parts are displayed and each one

@@ -33,7 +33,7 @@ from Products.CMFCore.utils import getToolByName
 from collective.awstats.config import PROJECTNAME
 
 def install(self, reinstall=False):
-    """External Method to install BlueAwstats 
+    """External Method to install awstats 
     
     This method to install a product is kept, until something better will get
     part of Plones front end, which utilize portal_setup.

@@ -29,7 +29,7 @@ __docformat__ = 'plaintext'
 
 
 import logging
-logger = logging.getLogger('BlueAwstats: setuphandlers')
+logger = logging.getLogger('awstats: setuphandlers')
 from config import PROJECTNAME
 from config import DEPENDENCIES
 from Products.CMFCore.utils import getToolByName
@@ -55,8 +55,8 @@ def installGSDependencies(context):
         setup_tool.setImportContext('profile-%s' % dependency)
         importsteps = setup_tool.getImportStepRegistry().sortSteps()
         excludes = [
-            u'BlueAwstats-QI-dependencies',
-            u'BlueAwstats-GS-dependencies'
+            u'awstats-QI-dependencies',
+            u'awstats-GS-dependencies'
         ]
         importsteps = [s for s in importsteps if s not in excludes]
         for step in importsteps:

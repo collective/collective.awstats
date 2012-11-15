@@ -45,8 +45,8 @@ schema = Schema((
         name='standardparts',
         widget=MultiSelectionWidget(
             label='Standardparts',
-            label_msgid='BlueAwstats_label_standardparts',
-            i18n_domain='BlueAwstats',
+            label_msgid='awstats_label_standardparts',
+            i18n_domain='awstats',
         ),
         multiValued=1,
         vocabulary="getStandardPartsVocab"
@@ -56,8 +56,8 @@ schema = Schema((
         name='displaygrouped',
         widget=BooleanField._properties['widget'](
             label='Displaygrouped',
-            label_msgid='BlueAwstats_label_displaygrouped',
-            i18n_domain='BlueAwstats',
+            label_msgid='awstats_label_displaygrouped',
+            i18n_domain='awstats',
         )
     ),
 
