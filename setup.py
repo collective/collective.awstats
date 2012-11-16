@@ -35,7 +35,7 @@ setup(name='collective.awstats',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'Plone'
+          'Plone',
           'bda.awstatsparser',
       ],
       entry_points="""
