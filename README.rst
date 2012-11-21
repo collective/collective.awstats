@@ -77,7 +77,7 @@ e.g.::
     <adapter
       for="Products.Archetypes.BaseObject.BaseObject"
       name="collective.awstats"
-      factory="collective.awstats.extender.AwstatsExtender" />
+      factory="collective.awstats.at.extender.AwstatsExtender" />
 
 
 Contributors

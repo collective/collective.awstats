@@ -5,7 +5,7 @@ from Products.Archetypes.utils import OrderedDict
 from Products.Archetypes import atapi
 from archetypes.schemaextender.interfaces import IOrderableSchemaExtender
 from archetypes.schemaextender.field import ExtensionField
-from . import _
+from .. import _
 
 
 class XBooleanField(ExtensionField, atapi.BooleanField):

@@ -2,8 +2,8 @@ from zope.interface import implementer
 from AccessControl import ClassSecurityInfo
 from Products.Archetypes import atapi
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
-from .interfaces import IAwstats
-from . import (
+from ..interfaces import IAwstats
+from .. import (
     config,
     _,
 )
