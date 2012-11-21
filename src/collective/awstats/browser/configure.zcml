@@ -3,7 +3,7 @@
 
   <browser:resource
     name="collective.awstats.css"
-    file="styles/awstas.css" />
+    file="styles/awstats.css" />
 
   <browser:resourceDirectory
     name="collective.awstats.images"
