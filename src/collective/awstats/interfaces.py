@@ -30,7 +30,7 @@ class IParsedSection(Interface):
 
 
 class IAwstatsProvider(Interface):
-    """Class providing an ParsedStatistics object on demand.
+    """Class providing a ParsedStatistics object on demand.
     """
     
     statsavailable = Attribute("Flag if stats are available")
