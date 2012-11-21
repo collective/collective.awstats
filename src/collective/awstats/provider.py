@@ -10,6 +10,8 @@ from Acquisition import (
 )
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from plone.registry.interfaces import IRegistry
+from bda.awstatsparser.parser import ParsedStatistics
+from bda.awstatsparser.defaults import SECTIONDEFS
 from .interfaces import IAwstatsProvider
 
 

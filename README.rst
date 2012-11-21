@@ -8,6 +8,9 @@ inside a plone site.
 Installation
 ============
 
+- Install and configure awstats. For Ubuntu based systems see
+  https://help.ubuntu.com/community/AWStats
+
 - Depend product in your buildout
 
 - Install via GenericSetup or Quick Installer

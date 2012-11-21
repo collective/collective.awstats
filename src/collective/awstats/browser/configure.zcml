@@ -24,8 +24,14 @@
 
   <browser:page
     for="*"
-    name="custompart_view.pt"
+    name="custompart_view"
     template="templates/custompart_view.pt"
+    permission="zope2.View" />
+
+  <browser:page
+    for="*"
+    name="stats_macros"
+    template="templates/stats_macros.pt"
     permission="zope2.View" />
 
   <browser:page

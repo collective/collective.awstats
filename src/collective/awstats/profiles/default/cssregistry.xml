@@ -8,7 +8,7 @@
     cookable="True"
     enabled="1"
     expression=""
-    id="collective.awstats.css"
+    id="++resource++collective.awstats.css"
     media="all"
     rel="stylesheet"
     rendering="import" />
