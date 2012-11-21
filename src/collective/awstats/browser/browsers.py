@@ -37,7 +37,8 @@ class Browsers(StatsBase):
         data = []
         for browser in browserfamilies:
             set = dict()
-            set['icon'] = '%s-ico.png' % browser
+            icon_tmpl = '++resource++collective.awstats.images/%s-ico.png'
+            set['icon'] = icon_tmpl % browser
             set['name'] = BROWSER_FAMILIES[browser]
             hit = total[browser] 
             set['hit'] = hit

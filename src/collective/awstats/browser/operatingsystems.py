@@ -32,7 +32,8 @@ class OperatingSystems(StatsBase):
         oskeys = ['win', 'mac', 'linux', 'Unknown']
         for os in oskeys:
             set = dict()
-            set['icon'] = '%s-ico.png' % os
+            icon_tmpl = '++resource++collective.awstats.images/%s-ico.png'
+            set['icon'] = icon_tmpl % os
             set['name'] = OS_FAMILIES[os]
             hit = total[os] 
             set['hit'] = hit

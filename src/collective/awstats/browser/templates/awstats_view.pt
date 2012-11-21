@@ -53,9 +53,9 @@
         
         <tal:block condition="python: not view.statsavailable">
             <div>
-                <h1>Awstats Management Tool Nicht vorhanden.</h1>
+                <h1>Awstats nicht oder inkorrekt konfiguriert.</h1>
                 <p>
-                    Das Awstats Management Tool kann nicht gefunden werden.
+                    Awstats Auswertungen nicht gefunden.
                     Bitte wenden Sie sich an den Systemadministrator.
                 </p>
             </div>

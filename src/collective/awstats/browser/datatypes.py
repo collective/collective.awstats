@@ -34,7 +34,8 @@ class Datatypes(StatsBase):
             hitpercent = self.calculateProportion(totalhit, hit) * 100
             byte = int(typedata.get('bandwidth', 0))
             bytepercent = self.calculateProportion(totalbyte, byte) * 100
-            set['icon'] = '%s-ico.png' % type
+            icon_tmpl = '++resource++collective.awstats.images/%s-ico.png'
+            set['icon'] = icon_tmpl % type
             set['postfix'] = type
             set['filetype'] = FILETYPES[type]
             set['hit'] = hit

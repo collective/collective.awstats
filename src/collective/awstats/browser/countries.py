@@ -18,8 +18,9 @@ class Countries(StatsBase):
             graph[set['domain']] = copy.deepcopy(set['data'])
         
         self.calculateGraphsData(graph, 150)
+        flag_tmpl = '++resource++collective.awstats.images/flags/flag-%s.gif'
         for set in data:
-            set['flag'] = 'flags/flag-%s.gif' % set['domain']
+            set['flag'] = flag_tmpl % set['domain']
             set['country'] = DOMAINS.get(set['domain'].upper(), 'Undefined')
             set['text'] = set['data']
             set['text']['byte'] = self.parseBytes(set['data']['byte'])
