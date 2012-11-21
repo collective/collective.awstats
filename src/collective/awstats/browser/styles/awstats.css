@@ -5,184 +5,184 @@
 #archetypes-fieldname-standardparts label.formQuestion {
     display:block;
 }
-#blueawstats {
+#awstats {
     font-size:80%;
 }
-#blueawstats input,
-#blueawstats select {
+#awstats input,
+#awstats select {
     font-size:90%;
 }
-#blueawstats h1 {
+#awstats h1 {
     text-decoration:none;
 }
-#blueawstats table {
+#awstats table {
     width:100%;
 }
-#blueawstats table th {
+#awstats table th {
     padding:3px;
     background-color:#aaaaaa;
 }
-#blueawstats table td {
+#awstats table td {
     padding:3px;
     text-align:center;
     vertical-align:top;
     background-color:#eeeeee;
 }
-#blueawstats .statschooser {
+#awstats .statschooser {
     padding:5px;
     background-color:#aaaaaa;
     margin:0px 0px 2px 0px;
 }
-#blueawstats .statschooser div {
+#awstats .statschooser div {
     margin-bottom:5px;
 }
-#blueawstats .highlight {
+#awstats .highlight {
     background-color:#bbbbbb;
 }
-#blueawstats .left {
+#awstats .left {
     text-align:left;
 }
-#blueawstats .right {
+#awstats .right {
     text-align:right;
 }
-#blueawstats .middle {
+#awstats .middle {
     vertical-align:middle;
 }
-#blueawstats .bottom {
+#awstats .bottom {
     vertical-align:bottom;
 }
-#blueawstats .label {
+#awstats .label {
     background-color:#aaaaaa;
 }
-#blueawstats .hitcolor {
+#awstats .hitcolor {
     background-color:#ff004e;
 }
-#blueawstats .visitcolor {
+#awstats .visitcolor {
     background-color:#fffc00;
 }
-#blueawstats .uniquecolor {
+#awstats .uniquecolor {
     background-color:#ffa800;
 }
-#blueawstats .pagecolor {
+#awstats .pagecolor {
     background-color:#00aeff;
 }
-#blueawstats .bytecolor {
+#awstats .bytecolor {
     background-color:#00ff48;
 }
-#blueawstats .sizeaveragecolor {
+#awstats .sizeaveragecolor {
     background-color:#00ffcc;
 }
-#blueawstats .entrancecolor {
+#awstats .entrancecolor {
     background-color:#e4ff00;
 }
-#blueawstats .exitcolor {
+#awstats .exitcolor {
     background-color:#ffc600;
 }
-#blueawstats .verticalgraph {
+#awstats .verticalgraph {
     width:0%;
 }
-#blueawstats .barwrapper {
+#awstats .barwrapper {
     padding:0;
 }
-#blueawstats .verticalbar {
+#awstats .verticalbar {
     background-image:url('++resource++collective.awstats.images/bar_bg.png');
     background-repeat:repeat-y;
     width:8px;
 }
-#blueawstats .horizontalbar {
+#awstats .horizontalbar {
     background-image:url('++resource++collective.awstats.images/bar_hor_bg.png');
     background-repeat:repeat-x;
     padding-top:4px;
 }
-#blueawstats .days-in-month .verticalbar {
+#awstats .days-in-month .verticalbar {
     background-image:url('++resource++collective.awstats.images/bar_bg.png');
     background-repeat:repeat-y;
     width:4px;
 }
-#blueawstats .servertime .verticalbar {
+#awstats .servertime .verticalbar {
     background-image:url('++resource++collective.awstats.images/bar_bg.png');
     background-repeat:repeat-y;
     width:4px;
 }
-#blueawstats .monthgraph {
+#awstats .monthgraph {
     width:8.33%;
 }
-#blueawstats .monthoverviewtable td {
+#awstats .monthoverviewtable td {
     width:16.66%;
 }
-#blueawstats .dayinmonthoverviewtable td {
+#awstats .dayinmonthoverviewtable td {
     width:20%;
 }
-#blueawstats .servertimeoverviewtable td {
+#awstats .servertimeoverviewtable td {
     width:25%;
 }
-#blueawstats .countries .flag {
+#awstats .countries .flag {
     width:15px;
 }
-#blueawstats .countries .country {
+#awstats .countries .country {
 }
-#blueawstats .countries .domain {
+#awstats .countries .domain {
     width:30px;
 }
-#blueawstats .countries .datacolumn {
+#awstats .countries .datacolumn {
     width:15%;
 }
-#blueawstats .countries .countrygraph {
+#awstats .countries .countrygraph {
     width:155px;
 }
-#blueawstats .clients .datacolumn {
+#awstats .clients .datacolumn {
     width:6%;
 }
-#blueawstats .clients .lastmodified {
+#awstats .clients .lastmodified {
     width:150px;
 }
-#blueawstats .robots .datacolumn {
+#awstats .robots .datacolumn {
     width:6%;
 }
-#blueawstats .robots .lastmodified {
+#awstats .robots .lastmodified {
     width:150px;
 }
-#blueawstats .sessions .datacolumn {
+#awstats .sessions .datacolumn {
     width:12%;
 }
-#blueawstats .datatypes .datacolumn {
+#awstats .datatypes .datacolumn {
     width:12%;
 }
-#blueawstats .datatypes .icon {
+#awstats .datatypes .icon {
     width:16px;
 }
-#blueawstats .datatypes .postfix {
+#awstats .datatypes .postfix {
     width:60px;
 }
-#blueawstats .datatypes .filetype {
+#awstats .datatypes .filetype {
 }
-#blueawstats .site-url .datacolumn {
+#awstats .site-url .datacolumn {
     width:10%;
 }
-#blueawstats .operatingsystems .datacolumn {
+#awstats .operatingsystems .datacolumn {
     width:10%;
 }
-#blueawstats .operatingsystems .icon {
+#awstats .operatingsystems .icon {
     width:16px;
 }
-#blueawstats .browser .datacolumn {
+#awstats .browser .datacolumn {
     width:10%;
 }
-#blueawstats .browser .icon {
+#awstats .browser .icon {
     width:16px;
 }
-#blueawstats .partlinks {
+#awstats .partlinks {
     list-style:none; 
     line-height:normal;
     margin:1em;
 }
-#blueawstats .partlinks li {
+#awstats .partlinks li {
     padding-top:0.7em;
     padding-bottom:0.3em;
     padding-left:0.3em;
     display:inline;
 }
-#blueawstats .partlinks li a {
+#awstats .partlinks li a {
     height:auto;
     line-height:1.9em;
     color:#111111;
@@ -192,10 +192,10 @@
     border-color:#111111;
     padding-right:0.5em;
 }
-#blueawstats .partlinks li a:hover {
+#awstats .partlinks li a:hover {
     text-decoration:underline;
 }
-#blueawstats .partlinks li a.currentItem {
+#awstats .partlinks li a.currentItem {
     font-weight:bold;
     text-decoration:underline;
 }

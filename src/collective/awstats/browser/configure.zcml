@@ -10,8 +10,14 @@
     directory="images" />
 
   <browser:page
-    name="awstats_controlpanel"
+    for="*"
+    name="stats_tab"
+    class=".StatsTab"
+    permission="zope2.View" />
+
+  <browser:page
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    name="awstats_controlpanel"
     class=".controlpanel.AwstatsControlPanel"
     template="templates/controlpanel.pt"
     permission="cmf.ManagePortal" />
@@ -26,6 +32,12 @@
     for="*"
     name="custompart_view"
     template="templates/custompart_view.pt"
+    permission="zope2.View" />
+
+  <browser:page
+    for="*"
+    name="object_stats"
+    template="templates/object_stats.pt"
     permission="zope2.View" />
 
   <browser:page
