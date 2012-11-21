@@ -1,30 +1,29 @@
-from AccessControl import ClassSecurityInfo
-from Products.Archetypes.atapi import *
 from zope.interface import implementer
-from interfaces import IAwstats
+from AccessControl import ClassSecurityInfo
+from Products.Archetypes import atapi
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
-from collective.awstats.config import *
+from .interfaces import IAwstats
+from . import (
+    config,
+    _,
+)
 
 
-schema = Schema((
+schema = atapi.Schema((
 
-    LinesField(
+    atapi.LinesField(
         name='standardparts',
-        widget=MultiSelectionWidget(
-            label='Standardparts',
-            label_msgid='awstats_label_standardparts',
-            i18n_domain='awstats',
+        widget=atapi.MultiSelectionWidget(
+            label=_(u'awstats_label_standardparts', u'Standardparts'),
         ),
         multiValued=1,
-        vocabulary="getStandardPartsVocab"
+        vocabulary_factory="collective.awstats.StandardPartsVocabulary",
     ),
 
-    BooleanField(
+    atapi.BooleanField(
         name='displaygrouped',
-        widget=BooleanField._properties['widget'](
-            label='Displaygrouped',
-            label_msgid='awstats_label_displaygrouped',
-            i18n_domain='awstats',
+        widget=atapi.BooleanWidget(
+            label=_(u'awstats_label_displaygrouped', u'Display grouped'),
         )
     ),
 
@@ -32,39 +31,20 @@ schema = Schema((
 )
 
 
-Awstats_schema = BaseFolderSchema.copy() + \
+Awstats_schema = atapi.BaseFolderSchema.copy() + \
     schema.copy()
 
 
 @implementer(IAwstats)
-class Awstats(BaseFolder, BrowserDefaultMixin):
+class Awstats(atapi.BaseFolder, BrowserDefaultMixin):
     security = ClassSecurityInfo()
     meta_type = 'Awstats'
     _at_rename_after_creation = True
     schema = Awstats_schema
-
-    security.declarePublic('getStandardPartsVocab')
-    def getStandardPartsVocab(self):
-        vocab = (
-            ('context/@@overview', 'General Overview'),
-            ('context/@@monthhistory', 'Month History'),
-            ('context/@@daysinmonth', 'Days in Month'),
-            ('context/@@weekdays', 'Weekdays'),
-            ('context/@@servertime', 'Servertime'),
-            ('context/@@countries', 'Countries'),
-            ('context/@@clients', 'Clients'),
-            ('context/@@robots', 'Robots'),
-            ('context/@@sessions', 'Sessions'),
-            ('context/@@datatypes', 'Datatypes'),
-            ('context/@@siteurl', 'Site URLs'),
-            ('context/@@operatingsystems', 'Operating Systems'),
-            ('context/@@browsers', 'Browsers'),
-        )
-        return vocab
 
     security.declarePublic('exclude_from_nav')
     def exclude_from_nav(self):
         return True
 
 
-registerType(Awstats, PROJECTNAME)
+atapi.registerType(Awstats, config.PROJECTNAME)

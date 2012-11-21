@@ -26,4 +26,16 @@
     for="*"
     factory=".provider.AwstatsProvider" />
 
+  <utility
+      component=".vocabularies.StandardPartsVocabulary"
+      name="collective.awstats.StandardPartsVocabulary" />
+
+  <utility
+      component=".vocabularies.DomainVocabulary"
+      name="collective.awstats.DomainVocabulary" />
+
+  <utility
+      component=".vocabularies.EpochVocabulary"
+      name="collective.awstats.EpochVocabulary" />
+
 </configure>

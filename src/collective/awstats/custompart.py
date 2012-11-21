@@ -1,49 +1,43 @@
-from AccessControl import ClassSecurityInfo
-from Products.Archetypes.atapi import *
 from zope.interface import implementer
-from interfaces import ICustomPart
+from AccessControl import ClassSecurityInfo
+from Products.Archetypes import atapi
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
-from collective.awstats.config import *
-from collective.awstats.interfaces import IAwstatsProvider
+from .interfaces import ICustomPart
+from . import (
+    config,
+    _,
+)
 
 
-schema = Schema((
+schema = atapi.Schema((
 
-    StringField(
+    atapi.StringField(
         name='domain',
-        widget=SelectionWidget(
-            label='Domain',
-            label_msgid='awstats_label_domain',
-            i18n_domain='awstats',
+        widget=atapi.SelectionWidget(
+            label=_(u'awstats_label_domain', u'Domain'),
         ),
-        vocabulary="getDomainVocab"
+        vocabulary_factory="collective.awstats.DomainVocabulary",
     ),
 
-    StringField(
+    atapi.StringField(
         name='epoch',
-        widget=SelectionWidget(
-            label='Epoch',
-            label_msgid='awstats_label_epoch',
-            i18n_domain='awstats',
+        widget=atapi.SelectionWidget(
+            label=_(u'awstats_label_epoch', u'Epoch'),
         ),
-        vocabulary="getEpochVocab"
+        vocabulary_factory="collective.awstats.EpochVocabulary",
     ),
 
-    TextField(
+    atapi.TextField(
         name='definitions',
-        widget=TextAreaWidget(
-            label='Definitions',
-            label_msgid='awstats_label_definitions',
-            i18n_domain='awstats',
+        widget=atapi.TextAreaWidget(
+            label=_(u'awstats_label_definitions', u'Definitions'),
         )
     ),
 
-    BooleanField(
+    atapi.BooleanField(
         name='generateGraph',
-        widget=BooleanField._properties['widget'](
-            label='Generategraph',
-            label_msgid='awstats_label_generateGraph',
-            i18n_domain='awstats',
+        widget=atapi.BooleanWidget(
+            label=_(u'awstats_label_generateGraph', u'Generategraph'),
         )
     ),
 
@@ -51,28 +45,20 @@ schema = Schema((
 )
 
 
-CustomPart_schema = BaseSchema.copy() + \
+CustomPart_schema = atapi.BaseSchema.copy() + \
     schema.copy()
 
 
 @implementer(ICustomPart)
-class CustomPart(BaseContent, BrowserDefaultMixin):
+class CustomPart(atapi.BaseContent, BrowserDefaultMixin):
     security = ClassSecurityInfo()
     meta_type = 'CustomPart'
     _at_rename_after_creation = True
     schema = CustomPart_schema
-
-    security.declarePublic('getEpochVocab')
-    def getEpochVocab(self):
-        return (('annual', 'Annual'), ('monthly', 'Monthly'))
-
-    security.declarePublic('getDomainVocab')
-    def getDomainVocab(self):
-        return IAwstatsProvider(self).alloweddomains
 
     security.declarePublic('exclude_from_nav')
     def exclude_from_nav(self):
         return True
 
 
-registerType(CustomPart, PROJECTNAME)
+atapi.registerType(CustomPart, config.PROJECTNAME)

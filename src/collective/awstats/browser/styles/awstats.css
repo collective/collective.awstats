@@ -1,3 +1,8 @@
+#archetypes-fieldname-domain div.label,
+#archetypes-fieldname-epoch div.label,
+#archetypes-fieldname-standardparts label.formQuestion {
+    display:block;
+}
 #blueawstats {
     font-size:80%;
 }
