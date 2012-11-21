@@ -5,9 +5,9 @@
 
   <genericsetup:registerProfile
     name="default"
-    title="awstats"
+    title="collective.awstats"
     directory="profiles/default"
-    description="Extension profile for awstats."
+    description="Extension profile for collective.awstats."
     provides="Products.GenericSetup.interfaces.EXTENSION" />
 
 </configure>

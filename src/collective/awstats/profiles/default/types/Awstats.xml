@@ -5,7 +5,7 @@
    
  <property name="title">Awstats</property>
  <property name="description"></property>
- <property name="content_icon">awstats_icon.png</property>
+ <property name="content_icon">++resource++collective.awstats.images/awstats_icon.png</property>
  <property name="content_meta_type">Awstats</property>
  <property name="product">collective.awstats</property>
  <property name="factory">addAwstats</property>

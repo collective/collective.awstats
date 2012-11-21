@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 MONTH = {
     '01': u'Jänner',
     '02': u'Feber',

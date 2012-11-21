@@ -5,7 +5,7 @@
    
  <property name="title">CustomPart</property>
  <property name="description"></property>
- <property name="content_icon">awstats_part_icon.png</property>
+ <property name="content_icon">++resource++collective.awstats.images/awstats_part_icon.png</property>
  <property name="content_meta_type">CustomPart</property>
  <property name="product">collective.awstats</property>
  <property name="factory">addCustomPart</property>

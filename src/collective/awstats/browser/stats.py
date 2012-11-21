@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import copy
 import time
 import calendar
@@ -8,7 +9,8 @@ from Products.CMFCore.utils import getToolByName
 from interfaces import IStatsView
 from base import StatsBase
 from collective.awstats.constants import *
-    
+
+
 @implementer(IStatsView)
 class StatsView(StatsBase):
 
