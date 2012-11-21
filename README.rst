@@ -45,20 +45,20 @@ The listing configuration is primary done by a simple text field.
 
 The available informations in the SIDER section are:
 
-- Pages - How many times an URL has been accessed
-- Bandwidth - The used bandwith for this URL
-- Entry - How often this URL was the entry point
-- Exit - How often this URL was the exit point
+- pages - How many times an URL has been accessed
+- bandwidth - The used bandwith for this URL
+- entry - How often this URL was the entry point
+- exit - How often this URL was the exit point
 
 The syntax for the statistic configuration is as follows:
 
 - In the first line you define the information to display, seperated by pipes.
   For Example:
   
-    Pages (Downloads) | Bandwith | Entry | Exit
+    pages (Downloads) | bandwith | entry | exit
   
   There must be at least one requested information. The term in parethesis
-  can be set optional and is then used as the information identifyer.
+  can be set optional and is used as the information identifyer if given.
 
 - The following lines are the URL's to chart, and optional a title to use
   for this URL, f.e.:

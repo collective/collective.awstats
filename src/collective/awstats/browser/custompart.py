@@ -210,8 +210,8 @@ class CustomPart(StatsBase):
 
     def _getDefinition(self, definition):
         definition = definition.strip()
-        ret = [definition.lower(), definition]
+        ret = [definition, definition]
         if definition.find('(') != -1 and definition.find(')') != -1:
-            ret[0] = definition[:definition.find('(')].strip().lower()
+            ret[0] = definition[:definition.find('(')].strip()
             ret[1] = definition[definition.find('('):].strip('()')
         return tuple(ret)

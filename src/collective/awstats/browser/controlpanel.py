@@ -32,7 +32,8 @@ class AwstatsControlPanel(YAMLBaseForm):
 
     @property
     def domains_vocab(self):
-        return IAwstatsProvider(self.context).listAvailableDomains()
+        domains = IAwstatsProvider(self.context).listAvailableDomains()
+        return [domain for domain in domains if domain]
 
     def save(self, widget, data):
         def fetch(name):

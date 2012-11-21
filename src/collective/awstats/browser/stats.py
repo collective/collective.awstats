@@ -73,7 +73,7 @@ class StatsView(StatsBase):
         parts += tuple([part[0] for part in customparts])
         if not parts:
             return []
-        
+
         url = self.context.absolute_url()
         query = {
             'domain': self.domain,
@@ -83,7 +83,7 @@ class StatsView(StatsBase):
         currentpart = self.request.get('currentpart', '')
         if not currentpart:
             currentpart = parts[0]
-        
+
         partlinks = []
         for part in parts:
             query.update({'currentpart': part})
@@ -106,14 +106,14 @@ class StatsView(StatsBase):
     def statsparts(self):
         customparts = [part[0] for part in self._customparts]
         parts = self._standardparts + tuple(customparts)
-        
+
         if self.context.getDisplaygrouped():
             return self._chooser + parts
-            
+
         currentpart = self.request.get('currentpart', '')
-        if not currentpart:
+        if parts and not currentpart:
             currentpart = parts[0]
-        
+
         return self._chooser + (currentpart,)
 
     def initialize(self):
