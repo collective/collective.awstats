@@ -4,26 +4,14 @@ collective.awstats
 collective.awstats is a products for displaying Awstats generated statistice
 inside a plone site.
 
+
 Installation
 ============
 
-- Checkout and/or download the requirements
+- Depend product in your buildout
 
-- Start Zope
+- Install via GenericSetup or Quick Installer
 
-- Go to the ZMI and add a awstatsManagementTool. On further information
-  about the Management Tool see README.txt of this product.
-
-- Install the awstats Product with portal quickinstaller
-
-Changes
-=======
-
-- Awstats object is not a tool any longer
-
-- Statistic Parts can be enabled and disabled
-
-- Custom Parts can be added
 
 Awstats object
 ==============
@@ -31,12 +19,9 @@ Awstats object
 An awstats object can be placed anywhere in the portal. You have to be
 Manager to do that.
 
-The ability to create more than one awstats objects gives you beyond the
-features of the awstatsManagementTool makes the permission management
-more fine-grained.
-
 On Each Awstats object you can specify which parts are displayed and each one
 has its own custom parts.
+
 
 Custom Parts
 ============
@@ -78,23 +63,10 @@ The syntax for the statistic configuration is as follows:
     /foo/bar (Newsletter 1)
     /bar/baz (Newsletter 2)
 
-TODO
-====
 
-- cleanup the logic in browser/stats.py for displaying the single parts
+Contributors
+============
 
-- improve the styles for the part chooser
+- Robert Niederreiter <rnix [at] squarewave [dot] at>
 
-- make graph generation not beeing macros any longer
-
-- extend custom parts (atm only SIDER section supported)
-
-- general more refactoring (much later)
-
-Credits
-=======
-
-- This Product was written by Robert Niederreiter <rnix@squarewave.at>
-
-- The dependent bda.awstatsparser was written by
-  Jens Klein <jens@bluedynamics.com>
+- Jens Klein <jens [at] bluedynamics [dot] com>

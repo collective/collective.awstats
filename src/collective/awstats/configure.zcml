@@ -23,11 +23,7 @@
   </class>
 
   <adapter
-    for=".interfaces.IAwstats"
-    factory=".provider.AwstatsProvider" />
-
-  <adapter
-    for=".interfaces.ICustomPart"
+    for="*"
     factory=".provider.AwstatsProvider" />
 
 </configure>

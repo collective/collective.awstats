@@ -27,6 +27,7 @@ widgets:
         label: Domains
         vocabulary: expr:context.domains_vocab
         multivalued: True
+    mode: expr:not context.domains_vocab and 'skip' or 'edit'
 - save:
     factory: submit
     props:

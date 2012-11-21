@@ -5,5 +5,5 @@ History
 0.1
 ---
 
-- initial
+- initially ported from BlueAwstats.
   [rnix]

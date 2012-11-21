@@ -1,6 +1,7 @@
 from zope.component import getUtility
 from plone.registry.interfaces import IRegistry
 from yafowil.plone.form import YAMLBaseForm
+from ..interfaces import IAwstatsProvider
 from .. import _
 
 
@@ -31,7 +32,7 @@ class AwstatsControlPanel(YAMLBaseForm):
 
     @property
     def domains_vocab(self):
-        return ['1', '2']
+        return IAwstatsProvider(self.context).listAvailableDomains()
 
     def save(self, widget, data):
         def fetch(name):
