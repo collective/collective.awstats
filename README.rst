@@ -30,7 +30,7 @@ Custom Parts
 ============
 
 Custom Parts can be used to get specific information out of the SIDER section
-of the awstats file.
+of the awstats file. They are located as children inside an Awstats object.
 
 At the moment there is not really a gui implemented to configure the Custom
 parts.
@@ -65,6 +65,19 @@ The syntax for the statistic configuration is as follows:
   
     /foo/bar (Newsletter 1)
     /bar/baz (Newsletter 2)
+
+
+Awstats Extender
+================
+
+An Archetypes schemaextender is available for enabling per-object-based
+statistics via a separate tab. The schema extender must be enabled explicitely,
+e.g.::
+
+    <adapter
+      for="Products.Archetypes.BaseObject.BaseObject"
+      name="collective.awstats"
+      factory="collective.awstats.extender.AwstatsExtender" />
 
 
 Contributors

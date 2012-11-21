@@ -38,4 +38,17 @@
       component=".vocabularies.EpochVocabulary"
       name="collective.awstats.EpochVocabulary" />
 
+  <!-- Example Usage of AwstatsExtender -->
+  <!--
+  <adapter
+    for="Products.Archetypes.BaseObject.BaseObject"
+    name="collective.awstats"
+    factory=".extender.AwstatsExtender" />
+  -->
+
+  <adapter
+    for="Products.Archetypes.BaseObject.BaseObject"
+    name="collective.awstats"
+    factory=".extender.AwstatsExtender" />
+
 </configure>

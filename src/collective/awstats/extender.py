@@ -1,5 +1,6 @@
 from zope.interface import implements
 from zope.component import adapts
+from Products.CMFCore import permissions
 from Products.Archetypes.utils import OrderedDict
 from Products.Archetypes import atapi
 from archetypes.schemaextender.interfaces import IOrderableSchemaExtender
@@ -22,9 +23,8 @@ class AwstatsExtender(object):
 
         XBooleanField('awstats_enabled',
             schemata='settings',
-            required=False,
             languageIndependent=True,
-            write_permission=ModifyPortalContent,
+            write_permission=permissions.ModifyPortalContent,
             widget=atapi.BooleanWidget(
                 label=_(u'awstats_label_enabled', u'Awstats erlauben'),
             ),
@@ -32,6 +32,8 @@ class AwstatsExtender(object):
 
         XStringField('awstats_domain',
             schemata='settings',
+            languageIndependent=True,
+            write_permission=permissions.ModifyPortalContent,
             widget=atapi.SelectionWidget(
                 label=_(u'awstats_label_domain', u'Awstats Domain'),
             ),
@@ -40,6 +42,8 @@ class AwstatsExtender(object):
 
         XStringField('awstats_epoch',
             schemata='settings',
+            languageIndependent=True,
+            write_permission=permissions.ModifyPortalContent,
             widget=atapi.SelectionWidget(
                 label=_(u'awstats_label_epoch', u'Awstats Epoch'),
             ),

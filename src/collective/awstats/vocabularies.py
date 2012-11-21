@@ -7,19 +7,19 @@ from . import _
 
 def StandardPartsVocabulary(context):
     items = [
-        ('General Overview', 'context/@@overview'),
-        ('Month History', 'context/@@monthhistory'),
-        ('Days in Month', 'context/@@daysinmonth'),
-        ('Weekdays', 'context/@@weekdays'),
-        ('Servertime', 'context/@@servertime'),
-        ('Countries', 'context/@@countries'),
-        ('Clients', 'context/@@clients'),
-        ('Robots', 'context/@@robots'),
-        ('Sessions', 'context/@@sessions'),
-        ('Datatypes', 'context/@@datatypes'),
-        ('Site URLs', 'context/@@siteurl'),
-        ('Operating Systems', 'context/@@operatingsystems'),
-        ('Browsers', 'context/@@browsers')]
+        (_(u'general_overview', u'General Overview'), 'context/@@overview'),
+        (_(u'month_history', 'Month History'), 'context/@@monthhistory'),
+        (_(u'days_in_month', u'Days in Month'), 'context/@@daysinmonth'),
+        (_(u'weekdays', u'Weekdays'), 'context/@@weekdays'),
+        (_(u'servertime', u'Servertime'), 'context/@@servertime'),
+        (_(u'countries', u'Countries'), 'context/@@countries'),
+        (_(u'clients', u'Clients'), 'context/@@clients'),
+        (_(u'robots', u'Robots'), 'context/@@robots'),
+        (_(u'sessions', u'Sessions'), 'context/@@sessions'),
+        (_(u'datatypes', u'Datatypes'), 'context/@@datatypes'),
+        (_(u'site_urls', u'Site URLs'), 'context/@@siteurl'),
+        (_(u'oper_sys', u'Operating Systems'), 'context/@@operatingsystems'),
+        (_(u'browsers', u'Browsers'), 'context/@@browsers')]
     return SimpleVocabulary.fromItems(items)
 
 

@@ -1,5 +1,7 @@
 #archetypes-fieldname-domain div.label,
 #archetypes-fieldname-epoch div.label,
+#archetypes-fieldname-awstats_domain div.label,
+#archetypes-fieldname-awstats_epoch div.label,
 #archetypes-fieldname-standardparts label.formQuestion {
     display:block;
 }
