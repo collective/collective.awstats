@@ -10,6 +10,13 @@
     directory="images" />
 
   <browser:page
+    name="awstats_controlpanel"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".controlpanel.AwstatsControlPanel"
+    template="templates/controlpanel.pt"
+    permission="cmf.ManagePortal" />
+
+  <browser:page
     for="*"
     name="awstats_view"
     template="templates/awstats_view.pt"

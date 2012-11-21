@@ -1,0 +1,33 @@
+<registry>
+
+  <record name="collective.awstats.basedir">
+    <field type="plone.registry.field.TextLine">
+      <title>Base Directory</title>
+    </field>
+    <value>/var/lib/awstats</value>
+  </record>
+
+  <record name="collective.awstats.prefix">
+    <field type="plone.registry.field.TextLine">
+      <title>File Prefix</title>
+    </field>
+    <value>awstats</value>
+  </record>
+
+  <record name="collective.awstats.postfix">
+    <field type="plone.registry.field.TextLine">
+      <title>File Ending</title>
+    </field>
+    <value>txt</value>
+  </record>
+
+  <record name="collective.awstats.domains">
+    <field type="plone.registry.field.Tuple">
+        <title>Domains</title>
+        <value_type type="plone.registry.field.TextLine" />
+    </field>
+    <value>
+    </value>
+  </record>
+
+</registry>

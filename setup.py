@@ -37,6 +37,7 @@ setup(name='collective.awstats',
           'setuptools',
           'Plone',
           'bda.awstatsparser',
+          'yafowil.plone',
       ],
       entry_points="""
       # -*- Entry points: -*-

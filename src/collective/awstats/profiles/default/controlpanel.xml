@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object name="portal_controlpanel">
+  <configlet
+    title="Awstats"
+    action_id="awstats_configuration"
+    appId="collective.awstats"
+    category="Products"
+    condition_expr=""
+    url_expr="string:${portal_url}/awstats_controlpanel"
+    icon_expr="string:$portal_url/++resource++collective.awstats.images/awstats_icon.png"
+    visible="True">
+    <permission>Manage Portal</permission>
+  </configlet>
+</object>

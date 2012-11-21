@@ -10,8 +10,8 @@ _ = MessageFactory(config.PROJECTNAME)
 def initialize(context):
     """Register content types through Archetypes with Zope and the CMF.
     """
-    import Awstats
-    import CustomPart
+    import awstats
+    import custompart
 
     content_types, constructors, ftis = atapi.process_types(
         atapi.listTypes(config.PROJECTNAME),

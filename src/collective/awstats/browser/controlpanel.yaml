@@ -1,0 +1,37 @@
+factory: form
+name: awstats
+props:
+    action: expr:context.form_action
+    class: edit-form enableUnloadProtection
+widgets:
+- basedir:
+    factory: "#field:text"
+    value: expr:context.basedir_value
+    props:
+        label: Base Directory
+        required: True
+- prefix:
+    factory: "#field:text"
+    value: expr:context.prefix_value
+    props:
+        label: File Prefix
+- postfix:
+    factory: "#field:text"
+    value: expr:context.postfix_value
+    props:
+        label: File Ending
+- domains:
+    factory: "#field:select"
+    value: expr:context.domains_value
+    props:
+        label: Domains
+        vocabulary: expr:context.domains_vocab
+        multivalued: True
+- save:
+    factory: submit
+    props:
+        action: save
+        expression: True
+        handler: context.save
+        next: context.next
+        label: Save
