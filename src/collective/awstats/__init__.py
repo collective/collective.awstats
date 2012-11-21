@@ -4,10 +4,6 @@ from Products.Archetypes import atapi
 from . import config
 
 
-logger = logging.getLogger('collective.awstats')
-logger.debug('Installing Product')
-
-
 _ = MessageFactory(config.PROJECTNAME)
 
 
