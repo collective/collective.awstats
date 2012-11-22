@@ -107,7 +107,7 @@ class StatsView(StatsBase):
         customparts = [part[0] for part in self._customparts]
         parts = self._standardparts + tuple(customparts)
 
-        if self.context.getDisplaygrouped():
+        if self.displaygrouped:
             return self._chooser + parts
 
         currentpart = self.request.get('currentpart', '')
@@ -146,3 +146,18 @@ class StatsView(StatsBase):
                 )
             )
         return customparts
+
+
+class ObjectStatsView(StatsView):
+
+    @property
+    def displaygrouped(self):
+        return True
+
+    @property
+    def _standardparts(self):
+        return ('context/@@contextstats',)
+
+    @property
+    def _customparts(self):
+        return []

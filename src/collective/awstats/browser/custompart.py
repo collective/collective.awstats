@@ -27,7 +27,7 @@ class CustomPart(StatsBase):
     @property
     def columncount(self):
         count = len(self.custompartbarnames) + 1
-        if self.context.getGenerateGraph():
+        if self._generategraph:
             count += 1
         return count
 
@@ -35,7 +35,7 @@ class CustomPart(StatsBase):
     def parttitle(self):
         my = self.my
         year = my[2:]
-        epoch = self.context.getEpoch()
+        epoch = self._epoch
         if epoch == 'annual':
             epochtext = '(%s)' % year
         else:
@@ -48,7 +48,7 @@ class CustomPart(StatsBase):
     def customparthead(self):
         defs = self._partdefinitions
         head = [{}]
-        if self.context.getGenerateGraph():
+        if self._generategraph:
             head.append({})
         
         barnamekeys = self.barnamemapping.keys()
@@ -62,7 +62,7 @@ class CustomPart(StatsBase):
 
     @property
     def custompartdata(self):
-        epoch = self.context.getEpoch()
+        epoch = self._epoch
         if epoch == 'annual':
             data = self._annualcustompartdata
         else:
@@ -96,7 +96,6 @@ class CustomPart(StatsBase):
     def custompartbarnames(self):
         if self.__custompartbarnames is not False:
             return self.__custompartbarnames
-        
         defs = self._partdefinitions
         barnames = []
         barnamekeys = self.barnamemapping.keys()
@@ -165,7 +164,7 @@ class CustomPart(StatsBase):
         return query
 
     def _getCustomPartData(self, rawdata, query):
-        rendergraph = self.context.getGenerateGraph()
+        rendergraph = self._generategraph
         data = list()
         for row in query['rows']:
             rowdata = rawdata.get(row[0])
@@ -182,6 +181,14 @@ class CustomPart(StatsBase):
         return data
 
     @property
+    def _generategraph(self):
+        return self.context.getGenerateGraph()
+
+    @property
+    def _epoch(self):
+        return self.context.getEpoch()
+
+    @property
     def _structure(self):
         structure = self.context.getDefinitions().split('\r\n')
         structure = [line.strip() for line in structure if line.strip()]
@@ -193,8 +200,8 @@ class CustomPart(StatsBase):
             return self.__partdefinitions
         
         defs = dict()
-        defs['showgraph'] = self.context.getGenerateGraph()
-        defs['epoch'] = self.context.getEpoch()
+        defs['showgraph'] = self._generategraph
+        defs['epoch'] = self._epoch
         defs['columns'] = []
         defs['rows'] = []
         
@@ -231,8 +238,16 @@ class ContextStats(CustomPart):
     """
 
     @property
+    def _generategraph(self):
+        return True
+
+    @property
+    def _epoch(self):
+        return 'annual'
+
+    @property
     def _structure(self):
         return [
-            'pages | bandwith | entry | exit',
+            'pages | bandwidth | entry | exit',
             '/'.join(self.context.getPhysicalPath())
         ]

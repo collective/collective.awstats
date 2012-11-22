@@ -55,7 +55,7 @@ The syntax for the statistic configuration is as follows:
 - In the first line you define the information to display, seperated by pipes.
   For Example:
   
-    pages (Downloads) | bandwith | entry | exit
+    pages (Downloads) | bandwidth | entry | exit
   
   There must be at least one requested information. The term in parethesis
   can be set optional and is used as the information identifyer if given.
