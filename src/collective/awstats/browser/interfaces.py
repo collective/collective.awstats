@@ -222,3 +222,8 @@ class ICustomPart(Interface):
     custompartdata = Attribute("The custom part data")
 
     custompartbarnames = Attribute("The custom part bar names")
+
+
+class IContextStats(ICustomPart):
+    """Interface for context related stats.
+    """

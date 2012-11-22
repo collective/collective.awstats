@@ -1,5 +1,8 @@
 from zope.interface import implementer
-from interfaces import ICustomPart
+from interfaces import (
+    ICustomPart,
+    IContextStats,
+)
 from base import StatsBase
 from collective.awstats.constants import *
 
@@ -179,6 +182,12 @@ class CustomPart(StatsBase):
         return data
 
     @property
+    def _structure(self):
+        structure = self.context.getDefinitions().split('\r\n')
+        structure = [line.strip() for line in structure if line.strip()]
+        return structure
+
+    @property
     def _partdefinitions(self):
         if self.__partdefinitions is not False:
             return self.__partdefinitions
@@ -189,8 +198,7 @@ class CustomPart(StatsBase):
         defs['columns'] = []
         defs['rows'] = []
         
-        structure = self.context.getDefinitions().split('\r\n')
-        structure = [line.strip() for line in structure if line.strip()]
+        structure = self._structure
         if not structure:
             return defs
         
@@ -215,3 +223,16 @@ class CustomPart(StatsBase):
             ret[0] = definition[:definition.find('(')].strip()
             ret[1] = definition[definition.find('('):].strip('()')
         return tuple(ret)
+
+
+@implementer(IContextStats)
+class ContextStats(CustomPart):
+    """Implementation details see interfaces.ICustomPart
+    """
+
+    @property
+    def _structure(self):
+        return [
+            'pages | bandwith | entry | exit',
+            '/'.join(self.context.getPhysicalPath())
+        ]
