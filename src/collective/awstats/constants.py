@@ -67,6 +67,7 @@ BROWSER_FAMILIES = {
     'safari': 'Safari',
     'netscape': 'Netscape',
     'webcollage': 'PDA / Phone Browser',
+    'chrome': 'Google Chrome',
     'Unknown': 'Unbekannt'
 }
 
