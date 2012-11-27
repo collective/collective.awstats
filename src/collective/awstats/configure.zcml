@@ -46,9 +46,4 @@
     factory=".at.extender.AwstatsExtender" />
   -->
 
-  <adapter
-    for="Products.Archetypes.BaseObject.BaseObject"
-    name="collective.awstats"
-    factory=".at.extender.AwstatsExtender" />
-
 </configure>
