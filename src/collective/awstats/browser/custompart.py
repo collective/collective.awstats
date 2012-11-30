@@ -1,4 +1,9 @@
 from zope.interface import implementer
+from Acquisition import (
+    aq_inner,
+    aq_parent,
+)
+from Products.CMFPlone.interfaces import IPloneSiteRoot
 from interfaces import (
     ICustomPart,
     IContextStats,
@@ -35,14 +40,9 @@ class CustomPart(StatsBase):
     def parttitle(self):
         my = self.my
         year = my[2:]
-        epoch = self._epoch
-        if epoch == 'annual':
-            epochtext = '(%s)' % year
-        else:
-            month = my[:2]
-            epochtext = '(%s %s)' % (MONTH[month], year)
-        title = self.context.Title()
-        return '%s %s' % (title, epochtext)
+        month = my[:2]
+        return '%s %s' % (self.context.Title(),
+                          '(%s %s)' % (MONTH[month], year))
 
     @property
     def customparthead(self):
@@ -62,12 +62,7 @@ class CustomPart(StatsBase):
 
     @property
     def custompartdata(self):
-        epoch = self._epoch
-        if epoch == 'annual':
-            data = self._annualcustompartdata
-        else:
-            data = self._monthlycustompartdata
-        
+        data = self._monthlycustompartdata
         barnames = self.custompartbarnames
         graphs = dict()
         for dataset in data:
@@ -105,44 +100,6 @@ class CustomPart(StatsBase):
         
         self.__custompartbarnames = barnames
         return self.__custompartbarnames
-
-    @property
-    def _annualcustompartdata(self):
-        my = self.my
-        year = my[2:]
-        months = []
-        query = self._generateQuery()
-        for i in range(12):
-            key = '%s%s' % (str(i + 1), year)
-            if len(key) == 5:
-                key = '0%s' % key
-            stats = self.stats[key]
-            if stats:
-                months.append(self._getCustomPartData(stats['SIDER'], query))
-        
-        collectors = dict()
-        orderedkeys = []
-        for month in months:
-            for row in month:
-                title = row['title']
-                collector = collectors.get(title)
-                if not collector:
-                    orderedkeys.append(title)
-                    collectors[title] = {
-                        'title': title,
-                        'rendergraph': row['rendergraph'],
-                        'columns': row['columns'],
-                    }
-                else:
-                    pointer = 0
-                    for col in row['columns']:
-                        collector['columns'][pointer] += col
-                        pointer += 1
-        
-        data = []
-        for key in orderedkeys:
-            data.append(collectors[key])
-        return data
 
     @property
     def _monthlycustompartdata(self):
@@ -185,10 +142,6 @@ class CustomPart(StatsBase):
         return self.context.getGenerateGraph()
 
     @property
-    def _epoch(self):
-        return self.context.getEpoch()
-
-    @property
     def _structure(self):
         structure = self.context.getDefinitions().split('\r\n')
         structure = [line.strip() for line in structure if line.strip()]
@@ -201,7 +154,6 @@ class CustomPart(StatsBase):
         
         defs = dict()
         defs['showgraph'] = self._generategraph
-        defs['epoch'] = self._epoch
         defs['columns'] = []
         defs['rows'] = []
         
@@ -242,12 +194,18 @@ class ContextStats(CustomPart):
         return True
 
     @property
-    def _epoch(self):
-        return 'annual'
+    def _objectpath(self):
+        context = aq_inner(self.context)
+        path = list()
+        while not IPloneSiteRoot.providedBy(context):
+            path.append(context.getId())
+            context = aq_parent(context)
+        path = reversed(path)
+        return '/' + '/'.join(path)
 
     @property
     def _structure(self):
-        return [
-            'pages | bandwidth | entry | exit',
-            '/'.join(self.context.getPhysicalPath())
-        ]
+        defs = 'pages (Zugriffe) | bandwidth (Bytes) | ' +\
+               'entry (Einstieg) | exit (Exit)'
+        path = self._objectpath + ' (Angezeigtes Objekt)'
+        return [defs, path]

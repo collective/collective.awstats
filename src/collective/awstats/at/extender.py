@@ -30,26 +30,6 @@ class AwstatsExtender(object):
             ),
         ),
 
-        XStringField('awstats_domain',
-            schemata='settings',
-            languageIndependent=True,
-            write_permission=permissions.ModifyPortalContent,
-            widget=atapi.SelectionWidget(
-                label=_(u'awstats_label_domain', u'Awstats Domain'),
-            ),
-            vocabulary_factory="collective.awstats.DomainVocabulary",
-        ),
-
-        XStringField('awstats_epoch',
-            schemata='settings',
-            languageIndependent=True,
-            write_permission=permissions.ModifyPortalContent,
-            widget=atapi.SelectionWidget(
-                label=_(u'awstats_label_epoch', u'Awstats Epoch'),
-            ),
-            vocabulary_factory="collective.awstats.EpochVocabulary",
-        ),
-
     ]
 
     def __init__(self, context):

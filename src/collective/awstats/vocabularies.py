@@ -33,13 +33,3 @@ def DomainVocabulary(context):
 
 
 directlyProvides(DomainVocabulary, IVocabularyFactory)
-
-
-def EpochVocabulary(context):
-    items = [
-        (_(u'annual', u'Annual'), 'annual'),
-        (_(u'monthly', u'Monthly'), 'monthly')]
-    return SimpleVocabulary.fromItems(items)
-
-
-directlyProvides(EpochVocabulary, IVocabularyFactory)

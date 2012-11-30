@@ -32,13 +32,7 @@ Custom Parts
 Custom Parts can be used to get specific information out of the SIDER section
 of the awstats file. They are located as children inside an Awstats object.
 
-At the moment there is not really a gui implemented to configure the Custom
-parts.
-
-For a part you have to define the calculation epoch. it is either annual or
-monthly.
-
-Then you have to set a flag wether a graph should be generated or not.
+You have to set a flag wether a graph should be generated or not.
 The graph is always drawn next to the title if flag is set to true.
 
 The listing configuration is primary done by a simple text field.

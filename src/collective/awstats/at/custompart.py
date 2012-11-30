@@ -19,13 +19,6 @@ schema = atapi.Schema((
         vocabulary_factory="collective.awstats.DomainVocabulary",
     ),
 
-    atapi.StringField(
-        name='epoch',
-        widget=atapi.SelectionWidget(
-            label=_(u'awstats_label_epoch', u'Epoch'),
-        ),
-        vocabulary_factory="collective.awstats.EpochVocabulary",
-    ),
 
     atapi.TextField(
         name='definitions',

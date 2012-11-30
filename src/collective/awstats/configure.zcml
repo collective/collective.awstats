@@ -34,10 +34,6 @@
       component=".vocabularies.DomainVocabulary"
       name="collective.awstats.DomainVocabulary" />
 
-  <utility
-      component=".vocabularies.EpochVocabulary"
-      name="collective.awstats.EpochVocabulary" />
-
   <!-- Example Usage of AwstatsExtender -->
   <!--
   <adapter

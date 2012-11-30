@@ -31,11 +31,6 @@ msgstr ""
 msgid "awstats_label_domain"
 msgstr ""
 
-#. Default: "Epoch"
-#: CustomPart.py
-msgid "awstats_label_epoch"
-msgstr ""
-
 #. Default: "Generategraph"
 #: CustomPart.py
 msgid "awstats_label_generateGraph"
