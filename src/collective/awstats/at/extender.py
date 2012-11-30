@@ -24,6 +24,7 @@ class AwstatsExtender(object):
         XBooleanField('awstats_enabled',
             schemata='settings',
             languageIndependent=True,
+            default=True,
             write_permission=permissions.ModifyPortalContent,
             widget=atapi.BooleanWidget(
                 label=_(u'awstats_label_enabled', u'Awstats erlauben'),

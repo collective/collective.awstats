@@ -39,10 +39,10 @@ class CustomPart(StatsBase):
     @property
     def parttitle(self):
         my = self.my
-        year = my[2:]
-        month = my[:2]
-        return '%s %s' % (self.context.Title(),
-                          '(%s %s)' % (MONTH[month], year))
+        year = my[2:].decode('utf-8')
+        month = my[:2].decode('utf-8')
+        return u'%s %s' % (self.context.Title().decode('utf-8'),
+                           u'(%s %s)' % (MONTH[month], year))
 
     @property
     def customparthead(self):
