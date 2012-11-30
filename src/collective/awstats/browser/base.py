@@ -125,7 +125,7 @@ class StatsBase(BrowserView):
             set['data']['page'] = self._getFieldForDay(my, dateday, 'pages')
             set['data']['hit'] = self._getFieldForDay(my, dateday, 'hits')
             set['data']['byte'] = self._getFieldForDay(my, dateday, 'bandwidth')
-            if day == 6 or day == 0:
+            if day == 5 or day == 6:
                 set['highlight'] = True
             else:
                 set['highlight'] = False
