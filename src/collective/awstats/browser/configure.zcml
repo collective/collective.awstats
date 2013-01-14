@@ -63,6 +63,14 @@
   <browser:page
     for="*"
     name="statschooser"
+    class=".statschooser.ObjectStatsChooser"
+    permission="zope2.View"
+    allowed_interface=".interfaces.IStatsChooser"
+    template="templates/statschooser.pt" />
+
+  <browser:page
+    for="collective.awstats.interfaces.IAwstats"
+    name="statschooser"
     class=".statschooser.StatsChooser"
     permission="zope2.View"
     allowed_interface=".interfaces.IStatsChooser"

@@ -5,7 +5,7 @@
         <span tal:content="view/lastmodified" />
     </div>
     <form action="#" method="post"
-          tal:attributes="action context/absolute_url">
+          tal:attributes="action view/form_action">
         <select name="domain"
                 tal:define="alloweddomains view/alloweddomains"
                 tal:condition="python: len(alloweddomains) > 1">

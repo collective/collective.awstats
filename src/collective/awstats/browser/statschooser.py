@@ -9,6 +9,10 @@ class StatsChooser(StatsBase):
     """Implementation details see interfaces.IStatsChooser
     """
 
+    @property
+    def form_action(self):
+        return self.context.absolute_url()
+
     @property    
     def lastmodified(self):
         stats = self.stats[self.my]
@@ -41,3 +45,10 @@ class StatsChooser(StatsBase):
         if y == year:
             return True
         return False
+
+
+class ObjectStatsChooser(StatsChooser):
+
+    @property
+    def form_action(self):
+        return '%s/@@object_stats' % self.context.absolute_url()
