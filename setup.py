@@ -5,7 +5,7 @@ from setuptools import (
 )
 
 
-version = '0.1htug5'
+version = '0.1htug6'
 shortdesc = 'AWStats in Plone'
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 longdesc += open(os.path.join(os.path.dirname(__file__), 'HISTORY.rst')).read()

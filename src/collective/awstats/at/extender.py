@@ -1,23 +1,17 @@
-from zope.interface import implements
+from zope.interface import implementer
 from zope.component import adapts
 from Products.CMFCore import permissions
-from Products.Archetypes.utils import OrderedDict
 from Products.Archetypes import atapi
 from archetypes.schemaextender.interfaces import IOrderableSchemaExtender
 from archetypes.schemaextender.field import ExtensionField
 from .. import _
 
 
-class XBooleanField(ExtensionField, atapi.BooleanField):
-    pass
+class XBooleanField(ExtensionField, atapi.BooleanField): pass
 
 
-class XStringField(ExtensionField, atapi.StringField):
-    pass
-
-
+@implementer(IOrderableSchemaExtender)
 class AwstatsExtender(object):
-    implements(IOrderableSchemaExtender)
 
     fields = [
 
@@ -39,11 +33,5 @@ class AwstatsExtender(object):
     def getFields(self):
         return self.fields
 
-    def getOrder(self, original):
-        neworder = OrderedDict()
-        keys = original.keys()
-        last = keys.pop()
-        keys.insert(1, last)
-        for schemata in keys:
-            neworder[schemata] = original[schemata]
-        return neworder
+    def getOrder(self, order):
+        return order

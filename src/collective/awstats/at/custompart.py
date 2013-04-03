@@ -19,7 +19,6 @@ schema = atapi.Schema((
         vocabulary_factory="collective.awstats.DomainVocabulary",
     ),
 
-
     atapi.TextField(
         name='definitions',
         widget=atapi.TextAreaWidget(
