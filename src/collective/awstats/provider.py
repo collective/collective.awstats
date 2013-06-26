@@ -68,7 +68,7 @@ class AwstatsProvider(object):
         else:
             try:
                 del self.statistics[domain]
-            except KeyError, e: 
+            except KeyError, e:
                 logger.warning(str(e))
 
     def getAvailableYears(self, currentdomain):
@@ -81,12 +81,13 @@ class AwstatsProvider(object):
                 files.append(entry)
         domains = self.alloweddomains
         years = []
-        for file in files:
-            if not file.startswith(self.prefix) \
-              or not file.endswith(self.postfix):
+        for filename in files:
+            if not filename.startswith(self.prefix) \
+              or not filename.endswith(self.postfix):
                 continue
-            domain = file[len(self.prefix) + 7:file.index('.%s' % self.postfix)]
-            year = file[len(self.prefix) + 2:len(self.prefix) + 6]
+            domain = filename[len(self.prefix) + \
+                              7:filename.index('.%s' % self.postfix)]
+            year = filename[len(self.prefix) + 2:len(self.prefix) + 6]
             if not year in years \
               and domain in domains \
               and domain == currentdomain:
@@ -95,10 +96,10 @@ class AwstatsProvider(object):
 
     def readStatistics(self, domain):
         if self.statsavailable:
-            dir = self.basedir
+            directory = self.basedir
             pre = self.prefix
             post = self.postfix
-            stats = ParsedStatistics(domain, dir, pre, post, SECTIONDEFS)
+            stats = ParsedStatistics(domain, directory, pre, post, SECTIONDEFS)
             self.statistics[domain] = stats
 
     def getStatistics(self, domain):
@@ -116,13 +117,13 @@ class AwstatsProvider(object):
             if not os.path.isdir(entry):
                 files.append(entry)
         domains = []
-        for file in files:
-            if not file.startswith(self.prefix) \
-              or not file.endswith(self.postfix):
+        for filename in files:
+            if not filename.startswith(self.prefix) \
+              or not filename.endswith(self.postfix):
                 continue
             start = len(self.prefix) + 7
-            end = file.index('.%s' % self.postfix)
-            domain = file[start:end]
+            end = filename.index('.%s' % self.postfix)
+            domain = filename[start:end]
             if not domain in domains:
                 domains.append(domain)
         return domains

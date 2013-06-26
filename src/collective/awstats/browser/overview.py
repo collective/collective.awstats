@@ -1,7 +1,7 @@
 from zope.interface import implementer
 from interfaces import IOverview
-from base import StatsBase
-from collective.awstats.constants import *
+from .base import StatsBase
+from collective.awstats.constants import MONTH
 
 
 @implementer(IOverview)
@@ -40,11 +40,11 @@ class Overview(StatsBase):
 
     @property
     def totalbytesaverage(self):
-        bytes = self.getTotalRawBytes()
+        total_bytes = self.getTotalRawBytes()
         visits = int(self.totalvisits())
         if visits == 0:
             return '0'
-        average = bytes / visits
+        average = total_bytes / visits
         return self.parseBytes(average)
 
     @property

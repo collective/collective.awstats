@@ -1,7 +1,8 @@
 from zope.interface import implementer
 from interfaces import IMonthHistory
 from base import StatsBase
-from collective.awstats.constants import *
+from collective.awstats.constants import MONTH
+
 
 @implementer(IMonthHistory)
 class MonthHistory(StatsBase):
@@ -12,12 +13,12 @@ class MonthHistory(StatsBase):
     def monthgraph(self):
         data = self._getRawMonthData(self.my[2:])
         graph = dict()
-        for set in data:
-            graph[set['month']] = set['data']
-            
+        for record in data:
+            graph[set['month']] = record['data']
+
         self.calculateGraphsData(graph, 100)
-        for set in data:
-            set['data'] = graph[set['month']]
+        for record in data:
+            record['data'] = graph[record['month']]
         return data
 
     @property
@@ -27,8 +28,8 @@ class MonthHistory(StatsBase):
     @property
     def monthoverview(self):
         data = self._getRawMonthData(self.my[2:])
-        for set in data:
-            set['data']['byte'] = self.parseBytes(set['data']['byte'])
+        for record in data:
+            record['data']['byte'] = self.parseBytes(record['data']['byte'])
         return data
 
     @property
@@ -38,9 +39,9 @@ class MonthHistory(StatsBase):
         summary = dict()
         for field in fields:
             summary[field] = 0
-        for set in data:
+        for record in data:
             for field in fields:
-                summary[field] += set['data'][field]
+                summary[field] += record['data'][field]
         summary['byte'] = self.parseBytes(summary['byte'])
         return summary
 
@@ -50,16 +51,16 @@ class MonthHistory(StatsBase):
         data = []
         month = MONTH.keys()
         month.sort()
-        
+
         for m in month:
             my = '%s%s' % (m, year)
-            set = dict()
-            set['month'] = '%s %s' % (MONTH[m], year)
-            set['data'] = dict()
-            set['data']['unique'] = int(self.totalunique(my))
-            set['data']['visit'] = int(self.totalvisits(my))
-            set['data']['page'] = int(self.totalknownpages(my))
-            set['data']['hit'] = int(self.totalknownhits(my))
-            set['data']['byte'] = self.getTotalRawBytes(my)
-            data.append(set)
+            rset = dict()
+            rset['month'] = '%s %s' % (MONTH[m], year)
+            rset['data'] = dict()
+            rset['data']['unique'] = int(self.totalunique(my))
+            rset['data']['visit'] = int(self.totalvisits(my))
+            rset['data']['page'] = int(self.totalknownpages(my))
+            rset['data']['hit'] = int(self.totalknownhits(my))
+            rset['data']['byte'] = self.getTotalRawBytes(my)
+            data.append(rset)
         return data
