@@ -5,7 +5,7 @@ from setuptools import (
 )
 
 
-version = '0.1htug6'
+version = '1.0'
 shortdesc = 'AWStats in Plone'
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 longdesc += open(os.path.join(os.path.dirname(__file__), 'HISTORY.rst')).read()
@@ -21,7 +21,6 @@ setup(name='collective.awstats',
           'Operating System :: OS Independent',
           'Programming Language :: Python',
           'Topic :: Software Development',
-          'Framework :: Plone :: 4.2',
       ],
       keywords='plone statistics',
       author='BlueDynamics Alliance',
