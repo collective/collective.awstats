@@ -11,6 +11,6 @@
     id="++resource++collective.awstats.css"
     media="all"
     rel="stylesheet"
-    rendering="import" />
+    rendering="link" />
 
 </object>
